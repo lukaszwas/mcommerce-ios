@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GoM-Aa-UEH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="aKq-BT-mR1">
+            <objects>
+                <tabBarController id="GoM-Aa-UEH" customClass="HomeViewController" customModule="mcommerce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="WJX-Dy-B1c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="m5h-Ql-aTN" kind="relationship" relationship="viewControllers" id="IJO-CI-cY3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcm-Ct-9uz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-551" y="20"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="9G1-PX-Tm9">
+            <objects>
+                <viewController id="m5h-Ql-aTN" customClass="CategoriesViewController" customModule="mcommerce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NfH-4n-xMa"/>
+                        <viewControllerLayoutGuide type="bottom" id="zMB-S7-dqL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wl5-Cp-jPr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5z5-ms-9PN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="EbQ-FS-5Ep"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kx9-w6-zlL">
+                                <rect key="frame" x="0.0" y="86" width="375" height="532"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="m5h-Ql-aTN" id="3ZC-QM-z6r"/>
+                                    <outlet property="delegate" destination="m5h-Ql-aTN" id="cLl-V2-uVe"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Kx9-w6-zlL" secondAttribute="trailing" id="9BY-vd-Zy4"/>
+                            <constraint firstItem="Kx9-w6-zlL" firstAttribute="leading" secondItem="wl5-Cp-jPr" secondAttribute="leading" id="EP9-El-INl"/>
+                            <constraint firstItem="zMB-S7-dqL" firstAttribute="top" secondItem="Kx9-w6-zlL" secondAttribute="bottom" id="LQv-MO-fjz"/>
+                            <constraint firstItem="Kx9-w6-zlL" firstAttribute="top" secondItem="5z5-ms-9PN" secondAttribute="bottom" id="Sul-uY-VVn"/>
+                            <constraint firstItem="5z5-ms-9PN" firstAttribute="leading" secondItem="wl5-Cp-jPr" secondAttribute="leading" id="XSU-2b-Qj5"/>
+                            <constraint firstItem="5z5-ms-9PN" firstAttribute="top" secondItem="wl5-Cp-jPr" secondAttribute="top" id="j68-mM-MJW"/>
+                            <constraint firstAttribute="trailing" secondItem="5z5-ms-9PN" secondAttribute="trailing" id="wZN-7m-1Tu"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="tGW-Tb-A7a"/>
+                    <connections>
+                        <outlet property="tableView" destination="Kx9-w6-zlL" id="0Z0-C8-nUH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Zj-KN-08Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-551.20000000000005" y="766.86656671664173"/>
+        </scene>
+    </scenes>
+</document>
