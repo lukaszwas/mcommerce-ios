@@ -7,10 +7,11 @@
 //
 
 import UIKit
-import ALLoadingView
 
 class CategoriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var searchBarTextFieldView: UIView!
+    @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     var categories: [Category]? = [Category]()
@@ -20,6 +21,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.createSearchBar()
         self.setViewStyles()
         self.initializeCell()
         
@@ -31,28 +33,41 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         super.didReceiveMemoryWarning()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     // View styles
     func setViewStyles() {
-        
+        self.view.backgroundColor = CustomizationManager.categories_backgroundColor
+        self.searchBarView.backgroundColor = CustomizationManager.home_searchBar_backgroundColor
     }
     
     func setCellViewStyles(cell: CategoryTableViewCell) {
-        cell.separatorView.backgroundColor = CustomizationManager.instance.categories_getSeparatorColor()
-        cell.nameLabel.textColor = CustomizationManager.instance.categories_getFontColor()
+        cell.selectedBackgroundView = UIView()
+        cell.selectedBackgroundView?.backgroundColor = UIColor.clear
         
-        cell.nameLabel.font = UIFont.systemFont(ofSize: 17.0)
+        cell.separatorView.backgroundColor = CustomizationManager.categories_borderColor
+        cell.nameLabel.textColor = CustomizationManager.categories_textColor
         
         cell.nameLabelLeftConstraint.constant = 8;
         cell.speratorViewLeftConstraint.constant = 8;
         
+        cell.nameLabel.font = UIFont.systemFont(ofSize: 17.0)
+        
         cell.arrowImage.image = UIImage.init(named: "categories_arrowRight")
-        cell.arrowImage.tintColor = UIColor.init(red: 40.0/255.0, green: 88.0/255.0, blue: 123.0/255.0, alpha: 1)
+        cell.arrowImage.tintColor = CustomizationManager.categories_iconColor
+    }
+    
+    // Search bar
+    func createSearchBar() {
+        let searchBarController = SearchBarViewController(nibName: "SearchBarViewController", bundle: nil)
+        
+        self.searchBarTextFieldView.addSubview(searchBarController.view)
     }
     
     // Get categories
     func getCategories(category: Category?) {
-        ALLoadingView.manager.showLoadingView(ofType: .basic)
-        
         var categoriesApiService: ApiService
         
         if (category == nil) {
@@ -63,10 +78,10 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         ApiManager.instance.reqest(categoriesApiService) { (result: [Category]?) in
-            ALLoadingView.manager.hideLoadingView()
-            
             if (result?.count == 0) {
                 // go to products
+                self.goToProducts(category: category!)
+                
                 return
             }
             
@@ -76,6 +91,17 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
             self.categories = result
             self.tableView.reloadData()
         }
+    }
+    
+    // Go to products
+    func goToProducts(category: Category) {
+        let storyboard = UIStoryboard(name: "Products", bundle: nil)
+        let vc: ProductsViewController = storyboard.instantiateViewController(withIdentifier: "ProductsViewController") as! ProductsViewController
+        
+        vc.categoryId = category.id
+        vc.categoryName = category.name
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // Cells
@@ -113,7 +139,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
             if (indexPath.row == 0) {
                 // come back row
                 if (self.parentRootCategory == nil) {
-                    cell.nameLabel.text = "All categories"
+                    cell.nameLabel.text = CustomizationManager.categories_allCategoriesText
                 }
                 else {
                     cell.nameLabel.text = self.parentRootCategory?.name
@@ -126,7 +152,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
             }
             else if (indexPath.row == 1) {
                 // all products from category
-                cell.nameLabel.text = String.init(format: "All products: %@", (self.rootCategory?.name)!)
+                cell.nameLabel.text = String.init(format: "%@%@", CustomizationManager.categories_allProductsText, (self.rootCategory?.name)!)
                 
                 cell.nameLabelLeftConstraint.constant = 40;
                 cell.speratorViewLeftConstraint.constant = 40;
@@ -157,6 +183,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         }
         else if (self.rootCategory != nil && indexPath.row == 1) {
             // go to products
+            self.goToProducts(category: self.rootCategory!)
         }
         else {
             // show subcategoreis

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cart Login View Controller-->
+        <scene sceneID="KFy-Cx-0oR">
+            <objects>
+                <viewController storyboardIdentifier="CartLoginViewController" id="OuH-Je-bHw" customClass="CartLoginViewController" customModule="mcommerce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J65-Vd-mpx"/>
+                        <viewControllerLayoutGuide type="bottom" id="DTr-4V-H3y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hhX-d4-3Y1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart_background" translatesAutoresizingMaskIntoConstraints="NO" id="53h-1Q-88p">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPs-k6-CVz">
+                                <rect key="frame" x="0.0" y="280" width="375" height="108"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to view your cart" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ci-kD-R0p">
+                                        <rect key="frame" x="35" y="8" width="305" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn5-NF-dYR">
+                                        <rect key="frame" x="35" y="68" width="305" height="40"/>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.29803921570000003" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="yQF-u4-lZ2"/>
+                                        </constraints>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6Ci-kD-R0p" secondAttribute="trailing" constant="35" id="6Ri-PZ-Hhd"/>
+                                    <constraint firstItem="Mn5-NF-dYR" firstAttribute="top" secondItem="6Ci-kD-R0p" secondAttribute="bottom" constant="30" id="Gc3-ug-Dv7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mn5-NF-dYR" secondAttribute="trailing" constant="35" id="V1i-3l-mge"/>
+                                    <constraint firstItem="6Ci-kD-R0p" firstAttribute="leading" secondItem="jPs-k6-CVz" secondAttribute="leading" constant="35" id="bId-EK-eyc"/>
+                                    <constraint firstItem="Mn5-NF-dYR" firstAttribute="leading" secondItem="jPs-k6-CVz" secondAttribute="leading" constant="35" id="jen-V0-bLr"/>
+                                    <constraint firstItem="6Ci-kD-R0p" firstAttribute="top" secondItem="jPs-k6-CVz" secondAttribute="top" constant="8" id="lsd-3V-knH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mn5-NF-dYR" secondAttribute="bottom" id="qfN-iA-nLB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DTr-4V-H3y" firstAttribute="top" secondItem="53h-1Q-88p" secondAttribute="bottom" id="3dm-74-GDX"/>
+                            <constraint firstAttribute="trailing" secondItem="53h-1Q-88p" secondAttribute="trailing" id="4gD-OX-g9g"/>
+                            <constraint firstItem="53h-1Q-88p" firstAttribute="top" secondItem="hhX-d4-3Y1" secondAttribute="top" id="CoF-eL-mbA"/>
+                            <constraint firstItem="jPs-k6-CVz" firstAttribute="leading" secondItem="hhX-d4-3Y1" secondAttribute="leading" id="E88-6t-uy0"/>
+                            <constraint firstItem="53h-1Q-88p" firstAttribute="leading" secondItem="hhX-d4-3Y1" secondAttribute="leading" id="m87-MH-nBz"/>
+                            <constraint firstItem="jPs-k6-CVz" firstAttribute="centerY" secondItem="hhX-d4-3Y1" secondAttribute="centerY" id="mCl-8b-IaQ"/>
+                            <constraint firstAttribute="trailing" secondItem="jPs-k6-CVz" secondAttribute="trailing" id="vDM-7N-fBL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="Mn5-NF-dYR" id="036-49-ccR"/>
+                        <outlet property="loginTitleLabel" destination="6Ci-kD-R0p" id="4rt-0K-iIk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYw-a8-Lke" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="171.36431784107947"/>
+        </scene>
+        <!--Cart Products View Controller-->
+        <scene sceneID="g4l-Er-Qh9">
+            <objects>
+                <viewController storyboardIdentifier="CartProductsViewController" id="kYJ-eb-Eau" customClass="CartProductsViewController" customModule="mcommerce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="56x-hU-icr"/>
+                        <viewControllerLayoutGuide type="bottom" id="rbP-oA-wpY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RiS-Wk-1sK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart_background" translatesAutoresizingMaskIntoConstraints="NO" id="K7M-Ro-XiL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K7M-Ro-XiL" firstAttribute="top" secondItem="RiS-Wk-1sK" secondAttribute="top" id="ILF-8k-8gT"/>
+                            <constraint firstItem="rbP-oA-wpY" firstAttribute="top" secondItem="K7M-Ro-XiL" secondAttribute="bottom" id="Ty5-ge-owr"/>
+                            <constraint firstItem="K7M-Ro-XiL" firstAttribute="leading" secondItem="RiS-Wk-1sK" secondAttribute="leading" id="l1X-3y-Ctr"/>
+                            <constraint firstAttribute="trailing" secondItem="K7M-Ro-XiL" secondAttribute="trailing" id="pe2-kV-efH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RFB-iO-eTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820" y="171"/>
+        </scene>
+        <!--Cart Empty View Controller-->
+        <scene sceneID="wXQ-yA-6Tb">
+            <objects>
+                <viewController storyboardIdentifier="CartEmptyViewController" id="nai-bK-iFb" customClass="CartEmptyViewController" customModule="mcommerce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dcl-dP-9wS"/>
+                        <viewControllerLayoutGuide type="bottom" id="CDb-ef-co5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vvj-O2-J2B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart_background" translatesAutoresizingMaskIntoConstraints="NO" id="F3G-6y-LGo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9G-Wi-LHa">
+                                <rect key="frame" x="0.0" y="147" width="375" height="372"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart_cartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ao6-yl-kve">
+                                        <rect key="frame" x="67" y="0.0" width="240" height="168"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="168" id="Hgw-Nc-5av"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cart is empty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MW0-bx-IQj">
+                                        <rect key="frame" x="25" y="262" width="282" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ao6-yl-kve" secondAttribute="trailing" constant="68" id="1lF-9L-eC8"/>
+                                    <constraint firstItem="Ao6-yl-kve" firstAttribute="leading" secondItem="w9G-Wi-LHa" secondAttribute="leading" constant="67" id="8aJ-su-n1k"/>
+                                    <constraint firstAttribute="height" constant="372" id="aAG-1X-33a"/>
+                                    <constraint firstItem="Ao6-yl-kve" firstAttribute="top" secondItem="w9G-Wi-LHa" secondAttribute="top" id="j8V-jS-sVA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CDb-ef-co5" firstAttribute="top" secondItem="F3G-6y-LGo" secondAttribute="bottom" id="9bP-ak-RGj"/>
+                            <constraint firstItem="F3G-6y-LGo" firstAttribute="top" secondItem="Vvj-O2-J2B" secondAttribute="top" id="A4t-ir-ITg"/>
+                            <constraint firstItem="w9G-Wi-LHa" firstAttribute="leading" secondItem="Vvj-O2-J2B" secondAttribute="leading" id="KLj-PR-vKF"/>
+                            <constraint firstItem="F3G-6y-LGo" firstAttribute="leading" secondItem="Vvj-O2-J2B" secondAttribute="leading" id="R0V-pR-S0j"/>
+                            <constraint firstItem="w9G-Wi-LHa" firstAttribute="centerY" secondItem="Vvj-O2-J2B" secondAttribute="centerY" id="R2M-6d-OXC"/>
+                            <constraint firstAttribute="trailing" secondItem="w9G-Wi-LHa" secondAttribute="trailing" id="a4k-cd-HSe"/>
+                            <constraint firstAttribute="trailing" secondItem="F3G-6y-LGo" secondAttribute="trailing" id="sHq-fI-RTK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcP-AH-bub" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1556" y="169.56521739130437"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart_background" width="940" height="627"/>
+        <image name="cart_cartIcon" width="120" height="120"/>
+    </resources>
+</document>

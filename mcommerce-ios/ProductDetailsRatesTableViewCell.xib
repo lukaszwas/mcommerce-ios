@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDetailsRatesTableViewCell" rowHeight="100" id="KGk-i7-Jjw" customClass="ProductDetailsRatesTableViewCell" customModule="mcommerce_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="products_ratesStar" translatesAutoresizingMaskIntoConstraints="NO" id="Aqt-lI-irE">
+                        <rect key="frame" x="8" y="8" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="8aY-eh-wBI"/>
+                            <constraint firstAttribute="width" constant="16" id="PxF-NT-VcH"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="products_ratesStar" translatesAutoresizingMaskIntoConstraints="NO" id="Gsr-a4-liQ">
+                        <rect key="frame" x="28" y="8" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="3BJ-n4-Aty"/>
+                            <constraint firstAttribute="height" constant="16" id="ILx-Xz-ilf"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="products_ratesStar" translatesAutoresizingMaskIntoConstraints="NO" id="I7I-yw-qeT">
+                        <rect key="frame" x="48" y="8" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="p7I-k4-uza"/>
+                            <constraint firstAttribute="height" constant="16" id="sIW-Jq-tAm"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="products_ratesStar" translatesAutoresizingMaskIntoConstraints="NO" id="kJm-OH-0y2">
+                        <rect key="frame" x="68" y="8" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="7bf-ZP-OXf"/>
+                            <constraint firstAttribute="width" constant="16" id="dT4-lI-AGg"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="products_ratesStar" translatesAutoresizingMaskIntoConstraints="NO" id="cUh-rG-P08">
+                        <rect key="frame" x="88" y="8" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Uhh-SZ-sNm"/>
+                            <constraint firstAttribute="width" constant="16" id="qLR-YY-7iB"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtG-sa-Aqc">
+                        <rect key="frame" x="120" y="8" width="192" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9N-h5-eKS">
+                        <rect key="frame" x="8" y="99" width="304" height="1"/>
+                        <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="bxl-0T-Wft"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VtG-sa-Aqc" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="4dS-c1-fet"/>
+                    <constraint firstItem="N9N-h5-eKS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="One-e7-XAf"/>
+                    <constraint firstItem="Gsr-a4-liQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Oyq-4D-EhB"/>
+                    <constraint firstAttribute="trailing" secondItem="N9N-h5-eKS" secondAttribute="trailing" constant="8" id="S7s-lw-Gf4"/>
+                    <constraint firstItem="Gsr-a4-liQ" firstAttribute="leading" secondItem="Aqt-lI-irE" secondAttribute="trailing" constant="4" id="d9l-Is-SfN"/>
+                    <constraint firstItem="cUh-rG-P08" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="dMH-5h-1XE"/>
+                    <constraint firstItem="Aqt-lI-irE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="f3Y-Sd-j3n"/>
+                    <constraint firstItem="I7I-yw-qeT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="f6l-Hd-ttG"/>
+                    <constraint firstItem="kJm-OH-0y2" firstAttribute="leading" secondItem="I7I-yw-qeT" secondAttribute="trailing" constant="4" id="leA-8Y-882"/>
+                    <constraint firstAttribute="bottom" secondItem="N9N-h5-eKS" secondAttribute="bottom" id="nS1-mi-nwy"/>
+                    <constraint firstItem="VtG-sa-Aqc" firstAttribute="leading" secondItem="cUh-rG-P08" secondAttribute="trailing" constant="16" id="oyA-hi-8d7"/>
+                    <constraint firstItem="VtG-sa-Aqc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="rGC-JW-Sxc"/>
+                    <constraint firstItem="Aqt-lI-irE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="rOh-vI-msd"/>
+                    <constraint firstItem="kJm-OH-0y2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="t8a-tY-cht"/>
+                    <constraint firstItem="I7I-yw-qeT" firstAttribute="leading" secondItem="Gsr-a4-liQ" secondAttribute="trailing" constant="4" id="w5f-Xw-wFj"/>
+                    <constraint firstItem="cUh-rG-P08" firstAttribute="leading" secondItem="kJm-OH-0y2" secondAttribute="trailing" constant="4" id="xir-61-XBx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bottomLine" destination="N9N-h5-eKS" id="4K6-n3-xxN"/>
+                <outlet property="commentLabel" destination="VtG-sa-Aqc" id="Sdf-In-tJf"/>
+                <outlet property="starImage1" destination="Aqt-lI-irE" id="Nyr-DR-U92"/>
+                <outlet property="starImage2" destination="Gsr-a4-liQ" id="UNY-eb-7Ae"/>
+                <outlet property="starImage3" destination="I7I-yw-qeT" id="Vnm-ar-TJb"/>
+                <outlet property="starImage4" destination="kJm-OH-0y2" id="C9m-la-FxZ"/>
+                <outlet property="starImage5" destination="cUh-rG-P08" id="xI4-Rp-Jis"/>
+            </connections>
+            <point key="canvasLocation" x="80" y="82"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="products_ratesStar" width="72" height="72"/>
+    </resources>
+</document>

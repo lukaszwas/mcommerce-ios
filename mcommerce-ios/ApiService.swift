@@ -16,10 +16,15 @@ enum ApiService {
     case getRootCategories()
     case getSubategories(id: Int)
 
+    // products
+    case getProductsWithCategoryId(categoryId: Int)
+    case getProductsWithId(id: Int)
+    case getRecommendedProducts()
+    
 }
 
 extension ApiService: TargetType {
-    var baseURL: URL { return URL(string: "http://192.168.1.10:8080")! }
+    var baseURL: URL { return URL(string: "http://192.168.1.11:8080")! }
     var path: String {
         switch self {
         case .getAllCategories:
@@ -28,23 +33,29 @@ extension ApiService: TargetType {
             return "/categories/root"
         case .getSubategories(let id):
             return "/categories/\(id)/subcategories"
+        case .getProductsWithCategoryId(let id):
+            return "/products/category/\(id)"
+        case .getProductsWithId(let id):
+            return "/products/\(id)"
+        case .getRecommendedProducts:
+            return "/products/recommended"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .getAllCategories, .getRootCategories, .getSubategories:
+        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts:
             return .get
         }
     }
     var parameters: [String: Any]? {
         switch self {
-        case .getAllCategories, .getRootCategories, .getSubategories:
+        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts:
             return nil
         }
     }
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getAllCategories, .getRootCategories, .getSubategories:
+        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts:
             return URLEncoding.default
         }
     }
@@ -58,7 +69,7 @@ extension ApiService: TargetType {
         return
             [
                 "Content-type": "application/json",
-                "Authorization": "Bearer ACE2B1E3-627D-4A17-A5E2-7A83211FDF5B"
+                "Authorization": "Bearer TOKEN"
             ]
     }
 }

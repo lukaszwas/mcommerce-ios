@@ -21,6 +21,7 @@ class ApiManager {
         api.request(request) { result in
             switch result {
             case let .success(response):
+                NSLog(String(data: response.data, encoding: .utf8)!)
                 do {
                     let mappedResponse: T? = T.from(try response.mapJSON() as! NSDictionary)
                     
@@ -42,6 +43,7 @@ class ApiManager {
         api.request(request) { result in
             switch result {
             case let .success(response):
+                NSLog(String(data: response.data, encoding: .utf8)!)
                 do {
                     let mappedResponse: [T]? = T.from(try response.mapJSON() as! NSArray)
                     

@@ -13,11 +13,13 @@ struct Category: Mappable {
     let name: String
     let description: String
     let parentId: Int?
+    let products: [Product]?
     
     init(map: Mapper) throws {
         try id = map.from("id")
         try name = map.from("name")
         try description = map.from("description")
         parentId = map.optionalFrom("parent_id")
+        products = map.optionalFrom("products")
     }
 }
