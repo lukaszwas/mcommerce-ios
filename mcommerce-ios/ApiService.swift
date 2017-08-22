@@ -11,6 +11,10 @@ import Moya
 
 enum ApiService {
 
+    // auth
+    case login(email: String, password: String)
+    case logout
+    
     // categories
     case getAllCategories()
     case getRootCategories()
@@ -24,9 +28,13 @@ enum ApiService {
 }
 
 extension ApiService: TargetType {
-    var baseURL: URL { return URL(string: "http://192.168.1.11:8080")! }
+    var baseURL: URL { return URL(string: "http://172.20.10.2:8080")! }
     var path: String {
         switch self {
+        case .login:
+            return "auth/login"
+        case .logout:
+            return "auth/logout"
         case .getAllCategories:
             return "/categories"
         case .getRootCategories:
@@ -45,18 +53,24 @@ extension ApiService: TargetType {
         switch self {
         case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts:
             return .get
+        case .login, .logout:
+            return .post
         }
     }
     var parameters: [String: Any]? {
         switch self {
-        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts:
+        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .logout:
             return nil
+        case .login(let email, let password):
+            return ["email": email, "password": password]
         }
     }
     var parameterEncoding: ParameterEncoding {
         switch self {
         case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts:
             return URLEncoding.default
+        case .login, .logout:
+            return JSONEncoding.default
         }
     }
     var sampleData: Data {

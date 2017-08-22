@@ -51,10 +51,31 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
     
     // Get product
     func getProduct() {
-        ApiManager.instance.reqest(.getProductsWithId(id: self.productId!)) { (result: Product?) in
+        ApiManager.instance.reqest(.getProductsWithId(id: self.productId!), completion: { (result: Product?) in
             self.product = result
             self.tableView.reloadData()
-        }
+        }) { }
+    }
+    
+    // Add to cart
+    func addToCart() {
+        let cartItem: NSDictionary = [
+            "name" : (self.product?.name)!,
+            "price" : (self.product?.price)!,
+            "quantity" : 1,
+            "imageUrl" : (self.product?.thumbnailUrl)!
+        ]
+        
+        let cart: NSArray = PersistanceManager.getCart()
+        let newCart = NSMutableArray(array: cart)
+        
+        newCart.add(cartItem)
+        
+        PersistanceManager.setCart(cart: newCart)
+        
+        let alert = UIAlertController(title: nil, message: CustomizationManager.productsDetails_addToCartText, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     // Cells
@@ -114,6 +135,8 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
         
         if (indexPath.row == 1) {
             let cell: ProductDetailsTitleTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "ProductDetailsTitleTableViewCell", for: indexPath) as! ProductDetailsTitleTableViewCell
+            
+            cell.productDetailsViewController = self
             
             cell.addToCartImage.image = UIImage(named: "productdetails_addToCart")
             cell.addToCartImage.tintColor = UIColor.white

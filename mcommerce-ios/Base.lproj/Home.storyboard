@@ -322,23 +322,32 @@
                                     <constraint firstAttribute="trailing" secondItem="MPA-Yf-3yG" secondAttribute="trailing" id="yUx-5C-ouq"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlO-eu-1P9">
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bdr-9a-3NM" secondAttribute="trailing" id="5mX-lF-h4a"/>
                             <constraint firstItem="bdr-9a-3NM" firstAttribute="leading" secondItem="Av0-Fa-VHI" secondAttribute="leading" id="J4O-ZP-925"/>
+                            <constraint firstItem="FlO-eu-1P9" firstAttribute="top" secondItem="bdr-9a-3NM" secondAttribute="bottom" id="M1o-kA-47F"/>
                             <constraint firstItem="bdr-9a-3NM" firstAttribute="top" secondItem="Av0-Fa-VHI" secondAttribute="top" id="eUg-Cw-Cld"/>
+                            <constraint firstAttribute="trailing" secondItem="FlO-eu-1P9" secondAttribute="trailing" id="sNl-vA-Evn"/>
+                            <constraint firstItem="FlO-eu-1P9" firstAttribute="leading" secondItem="Av0-Fa-VHI" secondAttribute="leading" id="th4-KC-KYK"/>
+                            <constraint firstItem="sBl-LH-gDX" firstAttribute="top" secondItem="FlO-eu-1P9" secondAttribute="bottom" id="zvh-av-P33"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X0g-6X-aZM"/>
                     <connections>
+                        <outlet property="moreContentView" destination="FlO-eu-1P9" id="oNr-rc-fOU"/>
                         <outlet property="searchBarTextFieldView" destination="MPA-Yf-3yG" id="SUS-9i-BVF"/>
                         <outlet property="searchBarView" destination="bdr-9a-3NM" id="Joc-4M-ewA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUM-bQ-2AM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860" y="1631"/>
+            <point key="canvasLocation" x="2860" y="1630.4347826086957"/>
         </scene>
         <!--Categories-->
         <scene sceneID="0gd-kd-QHU">

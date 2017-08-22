@@ -42,6 +42,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginAction:" destination="OuH-Je-bHw" eventType="touchUpInside" id="guZ-nx-CJC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -91,19 +94,78 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart_background" translatesAutoresizingMaskIntoConstraints="NO" id="K7M-Ro-XiL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1W-UD-jlJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PU-9C-r88">
+                                        <rect key="frame" x="16" y="15" width="31" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11111.11 zł" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1Q-tg-xue">
+                                        <rect key="frame" x="16" y="41" width="80.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b1-yQ-w8i">
+                                        <rect key="frame" x="179" y="20" width="180" height="40"/>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.29803921570000003" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="FMG-MF-TLx"/>
+                                            <constraint firstAttribute="width" constant="180" id="npo-J0-wVd"/>
+                                        </constraints>
+                                        <state key="normal" title="Buy">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4PU-9C-r88" firstAttribute="leading" secondItem="a1W-UD-jlJ" secondAttribute="leading" constant="16" id="88j-b9-0a7"/>
+                                    <constraint firstItem="x1Q-tg-xue" firstAttribute="leading" secondItem="a1W-UD-jlJ" secondAttribute="leading" constant="16" id="DY8-GL-Hgv"/>
+                                    <constraint firstItem="4PU-9C-r88" firstAttribute="top" secondItem="a1W-UD-jlJ" secondAttribute="top" constant="15" id="OkX-rC-usO"/>
+                                    <constraint firstItem="7b1-yQ-w8i" firstAttribute="centerY" secondItem="a1W-UD-jlJ" secondAttribute="centerY" id="cfc-26-2v1"/>
+                                    <constraint firstItem="x1Q-tg-xue" firstAttribute="top" secondItem="4PU-9C-r88" secondAttribute="bottom" constant="8" id="eeO-S2-hqL"/>
+                                    <constraint firstAttribute="height" constant="80" id="pKU-cZ-YCb"/>
+                                    <constraint firstAttribute="trailing" secondItem="7b1-yQ-w8i" secondAttribute="trailing" constant="16" id="qqW-mB-t0b"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gBn-CI-dlE">
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kYJ-eb-Eau" id="eaV-6f-pEh"/>
+                                    <outlet property="delegate" destination="kYJ-eb-Eau" id="HGQ-0X-4FK"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rbP-oA-wpY" firstAttribute="top" secondItem="K7M-Ro-XiL" secondAttribute="bottom" id="3jl-t1-Db5"/>
                             <constraint firstItem="K7M-Ro-XiL" firstAttribute="top" secondItem="RiS-Wk-1sK" secondAttribute="top" id="ILF-8k-8gT"/>
-                            <constraint firstItem="rbP-oA-wpY" firstAttribute="top" secondItem="K7M-Ro-XiL" secondAttribute="bottom" id="Ty5-ge-owr"/>
+                            <constraint firstAttribute="trailing" secondItem="gBn-CI-dlE" secondAttribute="trailing" id="MAe-A4-Inw"/>
+                            <constraint firstItem="gBn-CI-dlE" firstAttribute="leading" secondItem="RiS-Wk-1sK" secondAttribute="leading" id="Mjc-Wc-SvK"/>
+                            <constraint firstItem="gBn-CI-dlE" firstAttribute="top" secondItem="a1W-UD-jlJ" secondAttribute="bottom" id="Mzz-ig-LYu"/>
+                            <constraint firstItem="a1W-UD-jlJ" firstAttribute="leading" secondItem="RiS-Wk-1sK" secondAttribute="leading" id="V4K-KE-LlU"/>
+                            <constraint firstAttribute="trailing" secondItem="a1W-UD-jlJ" secondAttribute="trailing" id="bYg-Zv-tL4"/>
+                            <constraint firstItem="rbP-oA-wpY" firstAttribute="top" secondItem="gBn-CI-dlE" secondAttribute="bottom" id="cgK-ie-3aw"/>
+                            <constraint firstItem="a1W-UD-jlJ" firstAttribute="top" secondItem="RiS-Wk-1sK" secondAttribute="top" id="kGm-Lq-8m5"/>
                             <constraint firstItem="K7M-Ro-XiL" firstAttribute="leading" secondItem="RiS-Wk-1sK" secondAttribute="leading" id="l1X-3y-Ctr"/>
                             <constraint firstAttribute="trailing" secondItem="K7M-Ro-XiL" secondAttribute="trailing" id="pe2-kV-efH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buyButton" destination="7b1-yQ-w8i" id="cCb-kq-awR"/>
+                        <outlet property="sumLabel" destination="x1Q-tg-xue" id="uzw-nO-yrV"/>
+                        <outlet property="sumTitleLabel" destination="4PU-9C-r88" id="ooS-58-Lgq"/>
+                        <outlet property="tableView" destination="gBn-CI-dlE" id="2bH-zP-NYt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFB-iO-eTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="171"/>
+            <point key="canvasLocation" x="820" y="170.46476761619192"/>
         </scene>
         <!--Cart Empty View Controller-->
         <scene sceneID="wXQ-yA-6Tb">
@@ -121,17 +183,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9G-Wi-LHa">
-                                <rect key="frame" x="0.0" y="147" width="375" height="372"/>
+                                <rect key="frame" x="0.0" y="245.5" width="375" height="175"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart_cartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ao6-yl-kve">
-                                        <rect key="frame" x="67" y="0.0" width="240" height="168"/>
+                                        <rect key="frame" x="67" y="0.0" width="240" height="120"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="168" id="Hgw-Nc-5av"/>
+                                            <constraint firstAttribute="height" constant="120" id="Hgw-Nc-5av"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cart is empty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MW0-bx-IQj">
-                                        <rect key="frame" x="25" y="262" width="282" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart is empty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MW0-bx-IQj">
+                                        <rect key="frame" x="46" y="145" width="282" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -139,10 +200,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="MW0-bx-IQj" firstAttribute="top" secondItem="Ao6-yl-kve" secondAttribute="bottom" constant="25" id="0Th-Qv-liT"/>
                                     <constraint firstAttribute="trailing" secondItem="Ao6-yl-kve" secondAttribute="trailing" constant="68" id="1lF-9L-eC8"/>
                                     <constraint firstItem="Ao6-yl-kve" firstAttribute="leading" secondItem="w9G-Wi-LHa" secondAttribute="leading" constant="67" id="8aJ-su-n1k"/>
-                                    <constraint firstAttribute="height" constant="372" id="aAG-1X-33a"/>
+                                    <constraint firstAttribute="bottom" secondItem="MW0-bx-IQj" secondAttribute="bottom" id="Q2H-gW-lHG"/>
+                                    <constraint firstItem="MW0-bx-IQj" firstAttribute="leading" secondItem="w9G-Wi-LHa" secondAttribute="leading" constant="46" id="TMI-Xm-vV3"/>
                                     <constraint firstItem="Ao6-yl-kve" firstAttribute="top" secondItem="w9G-Wi-LHa" secondAttribute="top" id="j8V-jS-sVA"/>
+                                    <constraint firstAttribute="trailing" secondItem="MW0-bx-IQj" secondAttribute="trailing" constant="47" id="jyR-Vv-b9w"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -157,6 +221,10 @@
                             <constraint firstAttribute="trailing" secondItem="F3G-6y-LGo" secondAttribute="trailing" id="sHq-fI-RTK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emptyImage" destination="Ao6-yl-kve" id="IXf-8b-hH1"/>
+                        <outlet property="emptyLabel" destination="MW0-bx-IQj" id="WOJ-gg-zK2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcP-AH-bub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,8 @@ import UIKit
 
 class ProductDetailsTitleTableViewCell: UITableViewCell {
 
+    var productDetailsViewController: ProductDetailsViewController?
+    
     @IBOutlet weak var addToCartImage: UIImageView!
     @IBOutlet weak var addToCartView: UIView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -21,6 +23,11 @@ class ProductDetailsTitleTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    // Actions
+    @IBAction func addToCartAction(_ sender: Any) {
+        self.productDetailsViewController?.addToCart()
     }
     
 }

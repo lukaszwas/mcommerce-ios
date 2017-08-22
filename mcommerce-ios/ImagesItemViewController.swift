@@ -21,7 +21,8 @@ class ImagesItemViewController: UIViewController {
         super.viewDidLoad()
         
         if (self.image == nil || self.image == "") {
-            
+            self.productImageView.image = UIImage(named: "productdetails_noimage")
+            self.productImageView.tintColor = CustomizationManager.productsDetails_noImageColor
         }
         else {
             self.productImageView.af_setImage(withURL: URL(string: self.image!)!)

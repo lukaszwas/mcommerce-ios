@@ -19,12 +19,16 @@ class CartViewController: UIViewController {
         
         self.createSearchBar()
         self.setViewStyles()
-        
-        add(asChildViewController: emptyView)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+        
+        self.refreshView()
     }
     
     // View styles
@@ -37,6 +41,29 @@ class CartViewController: UIViewController {
         let searchBarController = SearchBarViewController(nibName: "SearchBarViewController", bundle: nil)
         
         self.searchBarTextFieldView.addSubview(searchBarController.view)
+    }
+    
+    // Refresh view
+    func refreshView() {
+        let userToken = PersistanceManager.getUserToken()
+        
+        remove(asChildViewController: loginView)
+        remove(asChildViewController: emptyView)
+        remove(asChildViewController: productsView)
+        
+        if (userToken == "") {
+            add(asChildViewController: loginView)
+        }
+        else {
+            let cart = PersistanceManager.getCart()
+            
+            if (cart.count == 0) {
+                add(asChildViewController: emptyView)
+            }
+            else {
+                add(asChildViewController: productsView)
+            }
+        }
     }
     
     // Child view controllers definitions
@@ -64,6 +91,8 @@ class CartViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Cart", bundle: Bundle.main)
         
         var viewController = storyboard.instantiateViewController(withIdentifier: "CartProductsViewController") as! CartProductsViewController
+        
+        viewController.cartViewController = self
         
         self.add(asChildViewController: viewController)
         

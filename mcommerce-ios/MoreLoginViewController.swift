@@ -1,17 +1,17 @@
 //
-//  CartLoginViewController.swift
+//  MoreLoginViewController.swift
 //  mcommerce-ios
 //
-//  Created by lukasz on 19.08.2017.
+//  Created by lukasz on 20.08.2017.
 //  Copyright © 2017 lukasz. All rights reserved.
 //
 
 import UIKit
 
-class CartLoginViewController: UIViewController {
+class MoreLoginViewController: UIViewController {
 
+    @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var loginTitleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,9 @@ class CartLoginViewController: UIViewController {
     
     // View styles
     func setViewStyles() {
-        self.loginButton.backgroundColor = CustomizationManager.cart_login_buttonBackgroundColor
-        self.loginTitleLabel.text = CustomizationManager.cart_login_labelText
-        self.loginButton.setTitle(CustomizationManager.cart_login_buttonText, for: UIControlState.normal)
+        self.loginLabel.text = CustomizationManager.more_login_loginText
+        self.loginButton.setTitle(CustomizationManager.more_login_loginButtonText, for: UIControlState.normal)
+        self.loginButton.backgroundColor = CustomizationManager.more_login_buttonBackgroundColor
     }
     
     // Go to login
@@ -37,10 +37,10 @@ class CartLoginViewController: UIViewController {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     // Actions
     @IBAction func loginAction(_ sender: Any) {
         self.goToLogin()
     }
-
+    
 }

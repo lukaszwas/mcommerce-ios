@@ -40,7 +40,7 @@ class RecommendedViewController: UIViewController, UICollectionViewDelegate, UIC
     
     // Get recommended products
     func getRecommendedProducts() {
-        ApiManager.instance.reqest(.getRecommendedProducts()) { (result: Recommended?) in
+        ApiManager.instance.reqest(.getRecommendedProducts(), completion: { (result: Recommended?) in
             if (result == nil || result?.recommended.count == 0) {
                 self.emptyListView.isHidden = false
                 self.emptyListImage.tintColor = CustomizationManager.recommended_emptyList_imageColor
@@ -55,7 +55,7 @@ class RecommendedViewController: UIViewController, UICollectionViewDelegate, UIC
             self.categories = (result?.recommended)!
             
             self.collectionView.reloadData()
-        }
+        }) { }
     }
     
     // View styles

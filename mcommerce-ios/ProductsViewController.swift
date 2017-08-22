@@ -77,7 +77,7 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     // Get products
     func getProducts() {
-        ApiManager.instance.reqest(.getProductsWithCategoryId(categoryId: self.categoryId!)) { (result: [Product]?) in
+        ApiManager.instance.reqest(.getProductsWithCategoryId(categoryId: self.categoryId!), completion: { (result: [Product]?) in
             if (result?.count == 0) {
                 self.emptyListView.isHidden = false
                 self.emptyListImage.tintColor = CustomizationManager.products_emptyList_imageColor
@@ -91,7 +91,7 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
             
             self.products = result
             self.collectionView.reloadData()
-        }
+        }) { }
     }
     
     // Cells

@@ -77,7 +77,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
             categoriesApiService = ApiService.getSubategories(id: (category?.id)!)
         }
         
-        ApiManager.instance.reqest(categoriesApiService) { (result: [Category]?) in
+        ApiManager.instance.reqest(categoriesApiService, completion: { (result: [Category]?) in
             if (result?.count == 0) {
                 // go to products
                 self.goToProducts(category: category!)
@@ -90,7 +90,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
             
             self.categories = result
             self.tableView.reloadData()
-        }
+        }) { }
     }
     
     // Go to products
