@@ -9,11 +9,13 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - Result (3.2.3)
+  - Stripe (11.2.0)
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.2)
   - ModelMapper
   - Moya (= 9.0.0-alpha.1)
+  - Stripe
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -21,7 +23,8 @@ SPEC CHECKSUMS:
   ModelMapper: 3596a82f26c43491f6a8d3a00bcdba6ba0e62a93
   Moya: f2ce44cbd5e8be82b4761194420588b6b1aebf1e
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  Stripe: 898f83a95d72180c6eb4acd65b2ae6158fc6a8bd
 
-PODFILE CHECKSUM: ee229c5ee422139945d7a6be97ae8a01803d3af6
+PODFILE CHECKSUM: bc959eaa0f314007ea266e364dcc878362ff580b
 
 COCOAPODS: 1.3.1

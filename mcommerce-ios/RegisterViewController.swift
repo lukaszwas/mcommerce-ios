@@ -42,10 +42,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.isNavigationBarHidden = false
         
         let backButton = UIBarButtonItem()
-        backButton.title = CustomizationManager.auth_register_title
+        backButton.title = NSLocalizedString("auth_register_title", comment: "")
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        self.navigationController?.navigationBar.backItem?.title = CustomizationManager.auth_register_title
+        self.navigationController?.navigationBar.backItem?.title = NSLocalizedString("auth_register_title", comment: "")
     }
     
     // View styles
@@ -55,12 +55,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.tintColor = CustomizationManager.navigationController_textColor
         
-        self.firstNameTextField.placeholder = CustomizationManager.auth_register_firstNameText
-        self.lastNameTextField.placeholder = CustomizationManager.auth_register_lastNameText
-        self.emailTextField.placeholder = CustomizationManager.auth_register_emailText
-        self.passwordTextField.placeholder = CustomizationManager.auth_register_passwordText
-        self.repeatPasswordTextField.placeholder = CustomizationManager.auth_register_repeatPasswordText
-        self.registerButton.setTitle(CustomizationManager.auth_register_registerButtonText, for: UIControlState.normal)
+        self.firstNameTextField.placeholder = NSLocalizedString("auth_register_firstNameText", comment: "")
+        self.lastNameTextField.placeholder = NSLocalizedString("auth_register_lastNameText", comment: "")
+        self.emailTextField.placeholder = NSLocalizedString("auth_register_emailText", comment: "")
+        self.passwordTextField.placeholder = NSLocalizedString("auth_register_passwordText", comment: "")
+        self.repeatPasswordTextField.placeholder = NSLocalizedString("auth_register_repeatPasswordText", comment: "")
+        self.registerButton.setTitle(NSLocalizedString("auth_register_registerButtonText", comment: ""), for: UIControlState.normal)
         
         self.firstNameBorderView.backgroundColor = CustomizationManager.auth_register_borderColor
         self.lastNameBorderView.backgroundColor = CustomizationManager.auth_register_borderColor

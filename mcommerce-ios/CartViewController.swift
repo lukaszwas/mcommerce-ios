@@ -41,6 +41,20 @@ class CartViewController: UIViewController {
         let searchBarController = SearchBarViewController(nibName: "SearchBarViewController", bundle: nil)
         
         self.searchBarTextFieldView.addSubview(searchBarController.view)
+        
+        searchBarController.searchTextField.addTarget(self, action: #selector(goToProducts(_:)), for: .editingDidEndOnExit)
+    }
+    
+    // Go to products
+    func goToProducts(_ textField: UITextField) {
+        if ((textField.text?.count)! > 0) {
+            let storyboard = UIStoryboard(name: "Products", bundle: nil)
+            let vc: ProductsViewController = storyboard.instantiateViewController(withIdentifier: "ProductsViewController") as! ProductsViewController
+            
+            vc.searchFilter = textField.text
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     // Refresh view

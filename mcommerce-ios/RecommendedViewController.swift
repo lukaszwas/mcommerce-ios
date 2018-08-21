@@ -45,7 +45,7 @@ class RecommendedViewController: UIViewController, UICollectionViewDelegate, UIC
                 self.emptyListView.isHidden = false
                 self.emptyListImage.tintColor = CustomizationManager.recommended_emptyList_imageColor
                 self.emptyListLabel.textColor = CustomizationManager.recommended_emptyList_textColor
-                self.emptyListLabel.text = CustomizationManager.recommended_emptyList_text
+                self.emptyListLabel.text = NSLocalizedString("recommended_emptyList_text", comment: "")
                 
                 return
             }
@@ -62,7 +62,7 @@ class RecommendedViewController: UIViewController, UICollectionViewDelegate, UIC
     func setViewStyles() {
         self.searchBarView.backgroundColor = CustomizationManager.home_searchBar_backgroundColor
         self.welcomeLabel.textColor = CustomizationManager.home_searchBar_welcomeTextColor
-        self.welcomeLabel.text = CustomizationManager.home_searchBar_welcomeText
+        self.welcomeLabel.text = NSLocalizedString("home_searchBar_welcomeText", comment: "")
     }
     
     func setCellViewStyles(cell: ProductCollectionViewCell) {
@@ -75,6 +75,20 @@ class RecommendedViewController: UIViewController, UICollectionViewDelegate, UIC
         let searchBarController = SearchBarViewController(nibName: "SearchBarViewController", bundle: nil)
         
         self.searchBarTextFieldView.addSubview(searchBarController.view)
+        
+        searchBarController.searchTextField.addTarget(self, action: #selector(goToProducts(_:)), for: .editingDidEndOnExit)
+    }
+    
+    // Go to products
+    func goToProducts(_ textField: UITextField) {
+        if ((textField.text?.count)! > 0) {
+            let storyboard = UIStoryboard(name: "Products", bundle: nil)
+            let vc: ProductsViewController = storyboard.instantiateViewController(withIdentifier: "ProductsViewController") as! ProductsViewController
+            
+            vc.searchFilter = textField.text
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     // Go to product details
@@ -114,7 +128,7 @@ class RecommendedViewController: UIViewController, UICollectionViewDelegate, UIC
         
         cell.productImageView.af_setImage(withURL: URL(string: product.thumbnailUrl)!)
         cell.titleLabel.text = product.name
-        cell.priceLabel.text = String(format: "%.2f%@", product.price, CustomizationManager.products_currencyText)
+        cell.priceLabel.text = String(format: "%.2f%@", product.price, NSLocalizedString("products_currencyText", comment: ""))
         
         return cell
     }

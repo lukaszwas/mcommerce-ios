@@ -1,0 +1,77 @@
+/* 
+  Localizable.strings
+  mcommerce-ios
+
+  Created by lukasz on 21.08.2018.
+  Copyright © 2018 lukasz. All rights reserved.
+*/
+
+// Navigation controller
+"navigationController_backText" = "Powrót";
+
+// HOME -------------
+
+// Search bar
+"home_searchBar_welcomeText" = "Witaj!";
+"home_searchBar_textField_text" = "Czego szukasz?";
+
+// Tab bar
+"home_tabBar_recommendedText" = "Polecane";
+"home_tabBar_categoriesText" = "Kategorie";
+"home_tabBar_cartText" = "Koszyk";
+"home_tabBar_moreText" = "Więcej";
+
+// Recommended
+"recommended_emptyList_text" = "Brak polecanych produktów";
+
+// Categories
+"categories_allCategoriesText" = "Wszystkie kategorie";
+"categories_allProductsText" = "Wszystko: ";
+
+// Cart
+"cart_login_labelText" = "Zaloguj się, aby zobaczyć swój koszyk";
+"cart_login_buttonText" = "Zaloguj się";
+"cart_empty_labelText" = "Twój koszyk jest pusty!";
+"cart_products_quantityText" = "Ilość";
+"cart_products_deleteText" = "Usuń";
+"cart_products_sumTitleText" = "Łączna kwota";
+"cart_products_buyButtonText" = "Do kasy";
+
+// More
+"more_login_loginText" = "Zaloguj się, aby zobaczyć więcej opcji";
+"more_login_loginButtonText" = "Zaloguj się";
+"more_menu_ordersText" = "Historia zamówień";
+"more_menu_userDataText" = "Twoje dane";
+"more_menu_logoutText" = "Wyloguj się";
+
+// PRODUCTS ------------
+
+"products_currencyText" = " zł";
+
+// Products list
+"products_emptyList_text" = "Brak produktów";
+
+// Product details
+"productsDetails_addToCartText" = "Produkt został dodany do koszyka";
+
+// AUTH
+
+// Login
+"auth_login_title" = "Logowanie";
+"auth_login_emailText" = "Adres e-mail";
+"auth_login_passwordText" = "Hasło";
+"auth_login_buttonLoginText" = "Zaloguj się";
+"auth_login_registerQuestionText" = "Nie masz jeszcze konta?";
+"auth_login_registerText" = "Zarejestruj się";
+"auth_login_emptyFieldsText" = "Wypełnij wszystkie pola";
+"auth_login_incorrectDataText" = "Podane dane są niepoprawne";
+
+// Register
+"auth_register_title" = "Rejestracja";
+"auth_register_firstNameText" = "Imię";
+"auth_register_lastNameText" = "Nazwisko";
+"auth_register_emailText" = "Adres e-mail";
+"auth_register_passwordText" = "Hasło";
+"auth_register_repeatPasswordText" = "Powtórz hasło";
+"auth_register_registerButtonText" = "Zarejestruj się";
+"auth_register_emptyFieldsText" = "Wypełnij wszystkie pola";

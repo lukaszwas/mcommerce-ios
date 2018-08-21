@@ -26,7 +26,7 @@ class CartEmptyViewController: UIViewController {
     // View styles
     func setViewStyles() {
         self.emptyImage.tintColor = CustomizationManager.cart_empty_imageColor
-        self.emptyLabel.text = CustomizationManager.cart_empty_labelText
+        self.emptyLabel.text = NSLocalizedString("cart_empty_labelText", comment: "")
     }
 
 }

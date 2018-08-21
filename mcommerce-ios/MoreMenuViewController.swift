@@ -43,15 +43,15 @@ class MoreMenuViewController: UIViewController {
         self.userBorderView.backgroundColor = CustomizationManager.more_menu_borderColor
         
         self.ordersImage.tintColor = CustomizationManager.more_menu_iconsColor
-        self.ordersLabel.text = CustomizationManager.more_menu_ordersText
+        self.ordersLabel.text = NSLocalizedString("more_menu_ordersText", comment: "")
         self.ordersBorderView.backgroundColor = CustomizationManager.more_menu_borderColor
         
         self.userDataImage.tintColor = CustomizationManager.more_menu_iconsColor
-        self.userDataLabel.text = CustomizationManager.more_menu_userDataText
+        self.userDataLabel.text = NSLocalizedString("more_menu_userDataText", comment: "")
         self.userDataBorderView.backgroundColor = CustomizationManager.more_menu_borderColor
         
         self.logoutImage.tintColor = CustomizationManager.more_menu_iconsColor
-        self.logoutLabel.text = CustomizationManager.more_menu_logoutText
+        self.logoutLabel.text = NSLocalizedString("more_menu_logoutText", comment: "")
         self.logoutBorderView.backgroundColor = CustomizationManager.more_menu_borderColor
     }
     

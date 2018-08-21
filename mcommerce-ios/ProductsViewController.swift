@@ -18,6 +18,7 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var categoryId: Int?
     var categoryName: String?
+    var searchFilter: String?
     var products: [Product]? = [Product]()
     
     override func viewDidLoad() {
@@ -77,21 +78,40 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     // Get products
     func getProducts() {
-        ApiManager.instance.reqest(.getProductsWithCategoryId(categoryId: self.categoryId!), completion: { (result: [Product]?) in
-            if (result?.count == 0) {
-                self.emptyListView.isHidden = false
-                self.emptyListImage.tintColor = CustomizationManager.products_emptyList_imageColor
-                self.emptyListLabel.textColor = CustomizationManager.products_emptyList_textColor
-                self.emptyListLabel.text = CustomizationManager.products_emptyList_text
+        if (searchFilter != nil && (searchFilter?.count)! > 0) {
+            ApiManager.instance.reqest(.searchProducts(filter: self.searchFilter!), completion: { (result: [Product]?) in
+                if (result?.count == 0) {
+                    self.emptyListView.isHidden = false
+                    self.emptyListImage.tintColor = CustomizationManager.products_emptyList_imageColor
+                    self.emptyListLabel.textColor = CustomizationManager.products_emptyList_textColor
+                    self.emptyListLabel.text = NSLocalizedString("products_emptyList_text", comment: "")
+                    
+                    return
+                }
                 
-                return
-            }
-            
-            self.emptyListView.isHidden = true
-            
-            self.products = result
-            self.collectionView.reloadData()
-        }) { }
+                self.emptyListView.isHidden = true
+                
+                self.products = result
+                self.collectionView.reloadData()
+            }) { }
+        }
+        else {
+            ApiManager.instance.reqest(.getProductsWithCategoryId(categoryId: self.categoryId!), completion: { (result: [Product]?) in
+                if (result?.count == 0) {
+                    self.emptyListView.isHidden = false
+                    self.emptyListImage.tintColor = CustomizationManager.products_emptyList_imageColor
+                    self.emptyListLabel.textColor = CustomizationManager.products_emptyList_textColor
+                    self.emptyListLabel.text = NSLocalizedString("products_emptyList_text", comment: "")
+                    
+                    return
+                }
+                
+                self.emptyListView.isHidden = true
+                
+                self.products = result
+                self.collectionView.reloadData()
+            }) { }
+        }
     }
     
     // Cells
@@ -120,7 +140,7 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         cell.productImageView.af_setImage(withURL: URL(string: product.thumbnailUrl)!)
         cell.titleLabel.text = product.name
-        cell.priceLabel.text = String(format: "%.2f%@", product.price, CustomizationManager.products_currencyText)
+        cell.priceLabel.text = String(format: "%.2f%@", product.price, NSLocalizedString("products_currencyText", comment: ""))
         
         return cell
     }

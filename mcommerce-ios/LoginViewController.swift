@@ -35,10 +35,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.isNavigationBarHidden = false
         
         let backButton = UIBarButtonItem()
-        backButton.title = CustomizationManager.auth_login_title
+        backButton.title = NSLocalizedString("auth_login_title", comment: "")
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        self.navigationController?.navigationBar.backItem?.title = CustomizationManager.auth_login_title
+        self.navigationController?.navigationBar.backItem?.title = NSLocalizedString("auth_login_title", comment: "")
     }
     
     // View styles
@@ -50,13 +50,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         self.emailBorderView.backgroundColor = CustomizationManager.auth_login_borderColor
         self.passwordBorderView.backgroundColor = CustomizationManager.auth_login_borderColor
-        self.emailTextField.placeholder = CustomizationManager.auth_login_emailText
-        self.passwordTextField.placeholder = CustomizationManager.auth_login_passwordText
-        self.registerQuestionLabel.text = CustomizationManager.auth_login_registerQuestionText
+        self.emailTextField.placeholder = NSLocalizedString("auth_login_emailText", comment: "")
+        self.passwordTextField.placeholder = NSLocalizedString("auth_login_passwordText", comment: "")
+        self.registerQuestionLabel.text = NSLocalizedString("auth_login_registerQuestionText", comment: "")
         self.loginButton.backgroundColor = CustomizationManager.auth_login_buttonBackgroundColor
         self.registerButton.backgroundColor = CustomizationManager.auth_login_buttonBackgroundColor
-        self.loginButton.setTitle(CustomizationManager.auth_login_buttonLoginText, for: UIControlState.normal)
-        self.registerButton.setTitle(CustomizationManager.auth_login_registerText, for: UIControlState.normal)
+        self.loginButton.setTitle(NSLocalizedString("auth_login_buttonLoginText", comment: ""), for: UIControlState.normal)
+        self.registerButton.setTitle(NSLocalizedString("auth_login_registerText", comment: ""), for: UIControlState.normal)
     }
     
     // Actions
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         // validate
         if (email == "" || password == "") {
-            let alert = UIAlertController(title: nil, message: CustomizationManager.auth_login_emptyFieldsText, preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("auth_login_emptyFieldsText", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
@@ -83,7 +83,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.navigationController?.popViewController(animated: true)
             
         }) { 
-            let alert = UIAlertController(title: nil, message: CustomizationManager.auth_login_incorrectDataText, preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("auth_login_incorrectDataText", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }

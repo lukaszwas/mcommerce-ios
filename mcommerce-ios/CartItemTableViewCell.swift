@@ -34,7 +34,7 @@ class CartItemTableViewCell: UITableViewCell {
     func setViewStyles() {
         self.quantityTextFieldBorderView.backgroundColor = CustomizationManager.cart_products_textFieldBorderColor
         self.topBorderView.backgroundColor = CustomizationManager.cart_products_borderColor
-        self.quantityLabel.text = CustomizationManager.cart_products_quantityText
+        self.quantityLabel.text = NSLocalizedString("cart_products_quantityText", comment: "")
     }
     
     // Actions

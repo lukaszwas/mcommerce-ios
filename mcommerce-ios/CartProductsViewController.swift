@@ -39,8 +39,8 @@ class CartProductsViewController: UIViewController, UITableViewDataSource, UITab
     // View styles
     func setViewStyles() {
         self.buyButton.backgroundColor = CustomizationManager.cart_products_buyButtonBackgroundColor
-        self.buyButton.setTitle(CustomizationManager.cart_products_buyButtonText, for: .normal)
-        self.sumTitleLabel.text = CustomizationManager.cart_products_sumTitleText
+        self.buyButton.setTitle(NSLocalizedString("cart_products_buyButtonText", comment: ""), for: .normal)
+        self.sumTitleLabel.text = NSLocalizedString("cart_products_sumTitleText", comment: "")
     }
     
     // Fill sum label
@@ -56,7 +56,7 @@ class CartProductsViewController: UIViewController, UITableViewDataSource, UITab
             sum = sum + (price * Float.init(quantity))
         }
         
-        self.sumLabel.text = String.init(format: "%.2f %@", sum, CustomizationManager.products_currencyText)
+        self.sumLabel.text = String.init(format: "%.2f %@", sum, NSLocalizedString("products_currencyText", comment: ""))
     }
     
     // Cells
@@ -123,7 +123,7 @@ class CartProductsViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return CustomizationManager.cart_products_deleteText
+        return NSLocalizedString("cart_products_deleteText", comment: "")
     }
 
 }

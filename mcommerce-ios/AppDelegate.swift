@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // status bar style
         UIApplication.shared.statusBarView?.backgroundColor = CustomizationManager.navigationController_background
+        
+        // stripe configuration
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_lB0BiohiDK9AVtEHbmokkIhm"
         
         return true
     }

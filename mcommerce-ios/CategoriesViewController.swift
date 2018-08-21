@@ -64,6 +64,20 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         let searchBarController = SearchBarViewController(nibName: "SearchBarViewController", bundle: nil)
         
         self.searchBarTextFieldView.addSubview(searchBarController.view)
+        
+        searchBarController.searchTextField.addTarget(self, action: #selector(goToSearchedProducts(_:)), for: .editingDidEndOnExit)
+    }
+    
+    // Go to searched products
+    func goToSearchedProducts(_ textField: UITextField) {
+        if ((textField.text?.count)! > 0) {
+            let storyboard = UIStoryboard(name: "Products", bundle: nil)
+            let vc: ProductsViewController = storyboard.instantiateViewController(withIdentifier: "ProductsViewController") as! ProductsViewController
+            
+            vc.searchFilter = textField.text
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     // Get categories
@@ -139,7 +153,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
             if (indexPath.row == 0) {
                 // come back row
                 if (self.parentRootCategory == nil) {
-                    cell.nameLabel.text = CustomizationManager.categories_allCategoriesText
+                    cell.nameLabel.text = NSLocalizedString("categories_allCategoriesText", comment: "")
                 }
                 else {
                     cell.nameLabel.text = self.parentRootCategory?.name
@@ -152,7 +166,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
             }
             else if (indexPath.row == 1) {
                 // all products from category
-                cell.nameLabel.text = String.init(format: "%@%@", CustomizationManager.categories_allProductsText, (self.rootCategory?.name)!)
+                cell.nameLabel.text = String.init(format: "%@%@", NSLocalizedString("categories_allProductsText", comment: ""), (self.rootCategory?.name)!)
                 
                 cell.nameLabelLeftConstraint.constant = 40;
                 cell.speratorViewLeftConstraint.constant = 40;

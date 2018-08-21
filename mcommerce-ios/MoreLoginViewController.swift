@@ -25,8 +25,8 @@ class MoreLoginViewController: UIViewController {
     
     // View styles
     func setViewStyles() {
-        self.loginLabel.text = CustomizationManager.more_login_loginText
-        self.loginButton.setTitle(CustomizationManager.more_login_loginButtonText, for: UIControlState.normal)
+        self.loginLabel.text = NSLocalizedString("more_login_loginText", comment: "")
+        self.loginButton.setTitle(NSLocalizedString("more_login_loginButtonText", comment: ""), for: UIControlState.normal)
         self.loginButton.backgroundColor = CustomizationManager.more_login_buttonBackgroundColor
     }
     

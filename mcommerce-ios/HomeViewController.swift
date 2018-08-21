@@ -31,10 +31,10 @@ class HomeViewController: UITabBarController {
         self.tabBar.tintColor = CustomizationManager.home_tabBar_activeColor
         self.tabBar.unselectedItemTintColor = CustomizationManager.home_tabBar_inactiveColor
         
-        self.tabBar.items![0].title = CustomizationManager.home_tabBar_recommendedText
-        self.tabBar.items![1].title = CustomizationManager.home_tabBar_categoriesText
-        self.tabBar.items![2].title = CustomizationManager.home_tabBar_cartText
-        self.tabBar.items![3].title = CustomizationManager.home_tabBar_moreText
+        self.tabBar.items![0].title = NSLocalizedString("home_tabBar_recommendedText", comment: "")
+        self.tabBar.items![1].title = NSLocalizedString("home_tabBar_categoriesText", comment: "")
+        self.tabBar.items![2].title = NSLocalizedString("home_tabBar_cartText", comment: "")
+        self.tabBar.items![3].title = NSLocalizedString("home_tabBar_moreText", comment: "")
     }
 
 }

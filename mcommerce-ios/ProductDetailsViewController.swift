@@ -24,7 +24,7 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
         
         self.getProduct()
         
-        self.navigationController?.navigationBar.backItem?.title = CustomizationManager.navigationController_backText
+        self.navigationController?.navigationBar.backItem?.title = NSLocalizedString("navigationController_backText", comment: "")
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,10 +35,10 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
         self.navigationController?.isNavigationBarHidden = false
         
         let backButton = UIBarButtonItem()
-        backButton.title = CustomizationManager.navigationController_backText
+        backButton.title = NSLocalizedString("navigationController_backText", comment: "")
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        self.navigationController?.navigationBar.backItem?.title = CustomizationManager.navigationController_backText
+        self.navigationController?.navigationBar.backItem?.title = NSLocalizedString("navigationController_backText", comment: "")
     }
     
     // Set view styles
@@ -73,7 +73,7 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
         
         PersistanceManager.setCart(cart: newCart)
         
-        let alert = UIAlertController(title: nil, message: CustomizationManager.productsDetails_addToCartText, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: nil, message: NSLocalizedString("productsDetails_addToCartText", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -143,7 +143,7 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
             cell.addToCartView.backgroundColor = CustomizationManager.productsDetails_addToCart_backgroundColor
             
             cell.titleLabel.text = self.product?.name
-            cell.priceLabel.text = String.init(format: "%.2f %@",  (self.product?.price)!, CustomizationManager.products_currencyText)
+            cell.priceLabel.text = String.init(format: "%.2f %@",  (self.product?.price)!, NSLocalizedString("products_currencyText", comment: ""))
             
             return cell
         }

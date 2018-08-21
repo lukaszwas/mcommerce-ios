@@ -26,8 +26,8 @@ class CartLoginViewController: UIViewController {
     // View styles
     func setViewStyles() {
         self.loginButton.backgroundColor = CustomizationManager.cart_login_buttonBackgroundColor
-        self.loginTitleLabel.text = CustomizationManager.cart_login_labelText
-        self.loginButton.setTitle(CustomizationManager.cart_login_buttonText, for: UIControlState.normal)
+        self.loginTitleLabel.text = NSLocalizedString("cart_login_labelText", comment: "")
+        self.loginButton.setTitle(NSLocalizedString("cart_login_buttonText", comment: ""), for: UIControlState.normal)
     }
     
     // Go to login

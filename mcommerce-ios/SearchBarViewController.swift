@@ -29,7 +29,6 @@ class SearchBarViewController: UIViewController {
         self.borderView.backgroundColor = CustomizationManager.home_searchBar_textField_borderColor
         self.searchImage.tintColor = CustomizationManager.home_searchBar_textField_iconColor
         self.searchTextField.textColor = CustomizationManager.home_searchBar_textField_textColor
-        self.searchTextField.text = CustomizationManager.home_searchBar_textField_text
+        self.searchTextField.placeholder = NSLocalizedString("home_searchBar_textField_text", comment: "")
     }
-
 }
