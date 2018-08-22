@@ -14,6 +14,7 @@ enum ApiService {
     // auth
     case login(email: String, password: String)
     case logout
+    case register(firstName: String, lastName: String, email: String, password: String)
     
     // categories
     case getAllCategories()
@@ -26,6 +27,10 @@ enum ApiService {
     case getRecommendedProducts()
     case searchProducts(filter: String)
     
+    // users
+    case getUserWithId(id: Int)
+    case saveUser(id: Int, firstName: String, lastName: String, email: String)
+    
 }
 
 extension ApiService: TargetType {
@@ -36,6 +41,8 @@ extension ApiService: TargetType {
                 return "auth/login"
             case .logout:
                 return "auth/logout"
+            case .register:
+                return "auth/register"
             case .getAllCategories:
                 return "/categories"
             case .getRootCategories:
@@ -50,29 +57,39 @@ extension ApiService: TargetType {
                 return "/products/recommended"
             case .searchProducts(let filter):
                 return "/products/search/\(filter)"
+            case .getUserWithId(let id):
+                return "/users/\(id)"
+            case .saveUser(let id, let _, let _, let _):
+                return "/users/\(id)"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .searchProducts:
+        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .searchProducts, .getUserWithId:
                 return .get
-            case .login, .logout:
+            case .login, .logout, .register:
                 return .post
+            case .saveUser:
+                return .patch
         }
     }
     var parameters: [String: Any]? {
         switch self {
-        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .logout, .searchProducts:
+        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .logout, .searchProducts,.getUserWithId:
                 return nil
             case .login(let email, let password):
                 return ["email": email, "password": password]
+            case .saveUser(let id, let firstName, let lastName, let email):
+                return ["id": id, "firstName": firstName, "lastName": lastName, "email": email]
+            case .register(let firstName, let lastName, let email, let password):
+                return ["firstName": firstName, "lastName": lastName, "email": email, "password": password]
         }
     }
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .searchProducts:
+        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .searchProducts, .getUserWithId:
                 return URLEncoding.default
-            case .login, .logout:
+            case .login, .logout, .saveUser, .register:
                 return JSONEncoding.default
         }
     }

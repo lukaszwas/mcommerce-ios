@@ -69,12 +69,45 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.repeatPasswordBorderView.backgroundColor = CustomizationManager.auth_register_borderColor
         
         self.registerButton.backgroundColor = CustomizationManager.auth_register_buttonBackgroundColor
-        
     }
     
     // Actions
     @IBAction func registerAction(_ sender: Any) {
+        let firstName = self.firstNameTextField.text
+        let lastName = self.lastNameTextField.text
+        let email = self.emailTextField.text
+        let password = self.passwordTextField.text
+        let repeatPassword = self.repeatPasswordTextField.text
         
+        if (firstName == "" || lastName == "" || email == "" || password == "" || repeatPassword == "") {
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("auth_register_fail", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if (password != repeatPassword) {
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("auth_register_differentPasswords", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if ((password?.count)! < 6) {
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("auth_register_passwordMin6Chars", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            ApiManager.instance.reqest(ApiService.register(firstName: firstName!, lastName: lastName!, email: email!, password: password!), completion: { (result: UserData?) in
+                
+                let alert = UIAlertController(title: nil, message: NSLocalizedString("auth_register_success", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { UIAlertAction in
+                    self.navigationController?.popViewController(animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }) {
+                let alert = UIAlertController(title: nil, message: NSLocalizedString("auth_register_fail", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method

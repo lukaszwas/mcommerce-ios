@@ -38,6 +38,8 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.navigationController?.isNavigationBarHidden = false
         
         self.navigationController?.navigationBar.backItem?.title = self.categoryName
+        let backButton = UIBarButtonItem(title: self.categoryName, style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
     }
     
     // View styles

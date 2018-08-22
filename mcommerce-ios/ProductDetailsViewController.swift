@@ -34,11 +34,9 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
         
-        let backButton = UIBarButtonItem()
-        backButton.title = NSLocalizedString("navigationController_backText", comment: "")
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        
         self.navigationController?.navigationBar.backItem?.title = NSLocalizedString("navigationController_backText", comment: "")
+        let backButton = UIBarButtonItem(title: NSLocalizedString("navigationController_backText", comment: ""), style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
     }
     
     // Set view styles

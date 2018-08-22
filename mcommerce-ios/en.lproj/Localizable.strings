@@ -75,3 +75,18 @@
 "auth_register_repeatPasswordText" = "Powtórz hasło";
 "auth_register_registerButtonText" = "Zarejestruj się";
 "auth_register_emptyFieldsText" = "Wypełnij wszystkie pola";
+"auth_register_fail" = "Niepoprawne dane";
+"auth_register_success" = "Możesz się teraz zalogować";
+"auth_register_differentPasswords" = "Podane hasła różnią się";
+"auth_register_passwordMin6Chars" = "Hasło musi mieć min. 6 znaków";
+
+// MORE
+
+// User data
+"more_userdata_title" = "Mój profil";
+"more_userdata_firstName" = "Imię";
+"more_userdata_lastName" = "Nazwisko";
+"more_userdata_email" = "E-mail";
+"more_userdata_save" = "Zapisz";
+"more_userdata_save_success" = "Dane zostały zmienione";
+"more_userdata_save_fail" = "Podane dane są niepoprawne";

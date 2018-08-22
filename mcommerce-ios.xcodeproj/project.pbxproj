@@ -60,6 +60,8 @@
 		B232453F1F4AE7D900211042 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232453E1F4AE7D900211042 /* PurchaseViewController.swift */; };
 		B23245421F4AE81B00211042 /* Purchase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23245411F4AE81B00211042 /* Purchase.storyboard */; };
 		B27DBF75212CA4E7003EDC72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B27DBF77212CA4E7003EDC72 /* Localizable.strings */; };
+		B27DBF79212DD808003EDC72 /* MoreUserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF78212DD808003EDC72 /* MoreUserDataViewController.swift */; };
+		B27DBF7B212DE1B8003EDC72 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF7A212DE1B7003EDC72 /* UserData.swift */; };
 		B28268991F4A2C1700F2C33B /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28268971F4A2C1700F2C33B /* CartItemTableViewCell.swift */; };
 		B282689A1F4A2C1700F2C33B /* CartItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28268981F4A2C1700F2C33B /* CartItemTableViewCell.xib */; };
 		B29BEEAA1F48C48E00B0A207 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29BEEA91F48C48E00B0A207 /* PersistanceManager.swift */; };
@@ -131,6 +133,8 @@
 		B232453E1F4AE7D900211042 /* PurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		B23245411F4AE81B00211042 /* Purchase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Purchase.storyboard; sourceTree = "<group>"; };
 		B27DBF76212CA4E7003EDC72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B27DBF78212DD808003EDC72 /* MoreUserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreUserDataViewController.swift; sourceTree = "<group>"; };
+		B27DBF7A212DE1B7003EDC72 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		B28268971F4A2C1700F2C33B /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
 		B28268981F4A2C1700F2C33B /* CartItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartItemTableViewCell.xib; sourceTree = "<group>"; };
 		B29BEEA91F48C48E00B0A207 /* PersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
@@ -321,6 +325,7 @@
 				B211E8561F48731B006B4A88 /* Recommended.swift */,
 				B29BEEBB1F49953800B0A207 /* Login.swift */,
 				B29BEEBD1F49E33000B0A207 /* User.swift */,
+				B27DBF7A212DE1B7003EDC72 /* UserData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 			children = (
 				B29BEEB41F49766200B0A207 /* MoreLoginViewController.swift */,
 				B29BEEB61F49767C00B0A207 /* MoreMenuViewController.swift */,
+				B27DBF78212DD808003EDC72 /* MoreUserDataViewController.swift */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -742,6 +748,7 @@
 				B211E80D1F423A24006B4A88 /* ProductDetailsViewController.swift in Sources */,
 				B204AC7D1F326A4C00DC9767 /* HomeViewController.swift in Sources */,
 				B211E81F1F423B86006B4A88 /* ProductDetailsFiltersTableViewCell.swift in Sources */,
+				B27DBF7B212DE1B8003EDC72 /* UserData.swift in Sources */,
 				B204AC811F3270A400DC9767 /* CategoriesViewController.swift in Sources */,
 				B211E84F1F47902C006B4A88 /* MoreViewController.swift in Sources */,
 				B29BEEB71F49767C00B0A207 /* MoreMenuViewController.swift in Sources */,
@@ -752,6 +759,7 @@
 				B211E8591F4878A9006B4A88 /* RecommendedHeaderCollectionReusableView.swift in Sources */,
 				B29BEEBE1F49E33000B0A207 /* User.swift in Sources */,
 				B211E8341F470792006B4A88 /* ProductDetailsHeaderTableViewCell.swift in Sources */,
+				B27DBF79212DD808003EDC72 /* MoreUserDataViewController.swift in Sources */,
 				B211E8461F478ABE006B4A88 /* SearchBarViewController.swift in Sources */,
 				B211E8631F48B2C1006B4A88 /* CartProductsViewController.swift in Sources */,
 				B204AC881F38FB1300DC9767 /* CustomizationManager.swift in Sources */,

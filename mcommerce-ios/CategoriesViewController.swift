@@ -75,6 +75,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
             let vc: ProductsViewController = storyboard.instantiateViewController(withIdentifier: "ProductsViewController") as! ProductsViewController
             
             vc.searchFilter = textField.text
+            vc.categoryName = textField.text
             
             self.navigationController?.pushViewController(vc, animated: true)
         }

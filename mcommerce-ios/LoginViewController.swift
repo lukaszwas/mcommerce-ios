@@ -76,11 +76,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // login
         ApiManager.instance.reqest(.login(email: email!, password: password!), completion: { (result: Login?) in
             
-            PersistanceManager.setUserToken(userToken: (result?.token)!)
-            PersistanceManager.setUserId(userId: (result?.userId)!)
-            PersistanceManager.setUserName(userName: String.init(format: "%@ %@", (result?.user.firstName)!, (result?.user.lastName)!))
-            
-            self.navigationController?.popViewController(animated: true)
+            if (result == nil) {
+                let alert = UIAlertController(title: nil, message: NSLocalizedString("auth_login_incorrectDataText", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            else {
+                PersistanceManager.setUserToken(userToken: (result?.token)!)
+                PersistanceManager.setUserId(userId: (result?.userId)!)
+                PersistanceManager.setUserName(userName: String.init(format: "%@ %@", (result?.user.firstName)!, (result?.user.lastName)!))
+                
+                self.navigationController?.popViewController(animated: true)
+            }
             
         }) { 
             let alert = UIAlertController(title: nil, message: NSLocalizedString("auth_login_incorrectDataText", comment: ""), preferredStyle: UIAlertControllerStyle.alert)

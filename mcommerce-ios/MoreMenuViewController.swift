@@ -29,7 +29,9 @@ class MoreMenuViewController: UIViewController {
         super.viewDidLoad()
         
         self.setViewStyles()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.userLabel.text = PersistanceManager.getUserName()
     }
 
@@ -60,6 +62,10 @@ class MoreMenuViewController: UIViewController {
     }
 
     @IBAction func userDataAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "More", bundle: nil)
+        let vc: MoreUserDataViewController = storyboard.instantiateViewController(withIdentifier: "MoreUserDataViewController") as! MoreUserDataViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func logoutAction(_ sender: Any) {
