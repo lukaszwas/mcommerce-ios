@@ -59,6 +59,10 @@ class MoreMenuViewController: UIViewController {
     
     // Actions
     @IBAction func ordersAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Purchase", bundle: nil)
+        let vc: PurchaseHistoryViewController = storyboard.instantiateViewController(withIdentifier: "PurchaseHistoryViewController") as! PurchaseHistoryViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction func userDataAction(_ sender: Any) {

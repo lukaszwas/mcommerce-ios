@@ -73,4 +73,8 @@ class PersistanceManager: NSObject {
     static func setCart(cart: NSArray) {
         UserDefaults.standard.set(cart, forKey: "Cart")
     }
+    
+    static func clearCart() {
+        UserDefaults.standard.set(NSArray(), forKey: "Cart")
+    }
 }

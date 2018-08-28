@@ -10,7 +10,6 @@ import Foundation
 import Moya
 
 enum ApiService {
-
     // auth
     case login(email: String, password: String)
     case logout
@@ -31,6 +30,11 @@ enum ApiService {
     case getUserWithId(id: Int)
     case saveUser(id: Int, firstName: String, lastName: String, email: String)
     
+    // purchase
+    case purchase(userId: Int, statusId: Int, firstName: String, lastName: String, address1: String, address2: String, zipCode: String, city: String)
+    case purchaseAddProduct(purchaseId: Int, productId: Int, price: Float)
+    case getAllUserPurchases()
+    case getPurchaseProducts(purchaseId: Int)
 }
 
 extension ApiService: TargetType {
@@ -61,13 +65,21 @@ extension ApiService: TargetType {
                 return "/users/\(id)"
             case .saveUser(let id, let _, let _, let _):
                 return "/users/\(id)"
+            case .purchase:
+                return "/purchase"
+            case .purchaseAddProduct:
+                return "/purchase/addproduct"
+            case .getAllUserPurchases:
+                return "/purchase"
+            case .getPurchaseProducts(let id):
+                return "/purchase/\(id)"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .searchProducts, .getUserWithId:
+        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .searchProducts, .getUserWithId, .getAllUserPurchases, .getPurchaseProducts:
                 return .get
-            case .login, .logout, .register:
+            case .login, .logout, .register, .purchase, .purchaseAddProduct:
                 return .post
             case .saveUser:
                 return .patch
@@ -75,7 +87,7 @@ extension ApiService: TargetType {
     }
     var parameters: [String: Any]? {
         switch self {
-        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .logout, .searchProducts,.getUserWithId:
+        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .logout, .searchProducts,.getUserWithId, .getAllUserPurchases, .getPurchaseProducts:
                 return nil
             case .login(let email, let password):
                 return ["email": email, "password": password]
@@ -83,13 +95,17 @@ extension ApiService: TargetType {
                 return ["id": id, "firstName": firstName, "lastName": lastName, "email": email]
             case .register(let firstName, let lastName, let email, let password):
                 return ["firstName": firstName, "lastName": lastName, "email": email, "password": password]
+            case .purchase(let userId, let statusId, let firstName, let lastName, let address1, let address2, let zipCode, let city):
+                return ["user_id": userId, "statusId": statusId, "first_name": firstName, "last_name": lastName, "address1": address1, "address2": address2, "zip_code": zipCode, "city": city]
+            case .purchaseAddProduct(let purchaseId, let productId, let price):
+                return ["purchase_id": purchaseId, "product_id": productId, "price": price]
         }
     }
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .searchProducts, .getUserWithId:
+        case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .searchProducts, .getUserWithId, .getAllUserPurchases, .getPurchaseProducts:
                 return URLEncoding.default
-            case .login, .logout, .saveUser, .register:
+            case .login, .logout, .saveUser, .register, .purchase, .purchaseAddProduct:
                 return JSONEncoding.default
         }
     }
@@ -100,10 +116,11 @@ extension ApiService: TargetType {
         return .request
     }
     var headers: [String: String]? {
+        NSLog("TOKEN: %@", PersistanceManager.getUserToken())
         return
             [
                 "Content-type": "application/json",
-                "Authorization": "Bearer TOKEN"
+                "Authorization": "Bearer " + PersistanceManager.getUserToken()
             ]
     }
 }

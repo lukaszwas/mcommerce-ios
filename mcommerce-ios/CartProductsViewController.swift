@@ -43,6 +43,18 @@ class CartProductsViewController: UIViewController, UITableViewDataSource, UITab
         self.sumTitleLabel.text = NSLocalizedString("cart_products_sumTitleText", comment: "")
     }
     
+    // Go to purchase
+    func goToPurchase() {
+        let storyboard = UIStoryboard(name: "Purchase", bundle: nil)
+        let vc: PurchaseViewController = storyboard.instantiateViewController(withIdentifier: "PurchaseViewController") as! PurchaseViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func buyButtonAction(_ sender: Any) {
+        self.goToPurchase()
+    }
+    
     // Fill sum label
     func fillSumLabel() {
         let cart = PersistanceManager.getCart()

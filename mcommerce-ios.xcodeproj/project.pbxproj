@@ -62,6 +62,16 @@
 		B27DBF75212CA4E7003EDC72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B27DBF77212CA4E7003EDC72 /* Localizable.strings */; };
 		B27DBF79212DD808003EDC72 /* MoreUserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF78212DD808003EDC72 /* MoreUserDataViewController.swift */; };
 		B27DBF7B212DE1B8003EDC72 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF7A212DE1B7003EDC72 /* UserData.swift */; };
+		B27DBF8321331D65003EDC72 /* PurchaseConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF8221331D65003EDC72 /* PurchaseConfirmViewController.swift */; };
+		B27DBF882133250F003EDC72 /* PurchaseConfirmProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF862133250F003EDC72 /* PurchaseConfirmProductTableViewCell.swift */; };
+		B27DBF892133250F003EDC72 /* PurchaseConfirmProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27DBF872133250F003EDC72 /* PurchaseConfirmProductTableViewCell.xib */; };
+		B27DBF8E2133317E003EDC72 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF8D2133317E003EDC72 /* Purchase.swift */; };
+		B27DBF9021333219003EDC72 /* PurchaseProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF8F21333219003EDC72 /* PurchaseProduct.swift */; };
+		B27DBF9221333C75003EDC72 /* PurchaseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF9121333C75003EDC72 /* PurchaseHistoryViewController.swift */; };
+		B27DBF9521333D4B003EDC72 /* PurchaseHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF9321333D4B003EDC72 /* PurchaseHistoryTableViewCell.swift */; };
+		B27DBF9621333D4B003EDC72 /* PurchaseHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27DBF9421333D4B003EDC72 /* PurchaseHistoryTableViewCell.xib */; };
+		B27DBF98213343C1003EDC72 /* PurchaseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF97213343C1003EDC72 /* PurchaseStatus.swift */; };
+		B27DBF9A21334590003EDC72 /* PurchaseHistoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF9921334590003EDC72 /* PurchaseHistoryDetailsViewController.swift */; };
 		B28268991F4A2C1700F2C33B /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28268971F4A2C1700F2C33B /* CartItemTableViewCell.swift */; };
 		B282689A1F4A2C1700F2C33B /* CartItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28268981F4A2C1700F2C33B /* CartItemTableViewCell.xib */; };
 		B29BEEAA1F48C48E00B0A207 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29BEEA91F48C48E00B0A207 /* PersistanceManager.swift */; };
@@ -135,6 +145,16 @@
 		B27DBF76212CA4E7003EDC72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B27DBF78212DD808003EDC72 /* MoreUserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreUserDataViewController.swift; sourceTree = "<group>"; };
 		B27DBF7A212DE1B7003EDC72 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		B27DBF8221331D65003EDC72 /* PurchaseConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseConfirmViewController.swift; sourceTree = "<group>"; };
+		B27DBF862133250F003EDC72 /* PurchaseConfirmProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseConfirmProductTableViewCell.swift; sourceTree = "<group>"; };
+		B27DBF872133250F003EDC72 /* PurchaseConfirmProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseConfirmProductTableViewCell.xib; sourceTree = "<group>"; };
+		B27DBF8D2133317E003EDC72 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		B27DBF8F21333219003EDC72 /* PurchaseProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProduct.swift; sourceTree = "<group>"; };
+		B27DBF9121333C75003EDC72 /* PurchaseHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryViewController.swift; sourceTree = "<group>"; };
+		B27DBF9321333D4B003EDC72 /* PurchaseHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		B27DBF9421333D4B003EDC72 /* PurchaseHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		B27DBF97213343C1003EDC72 /* PurchaseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseStatus.swift; sourceTree = "<group>"; };
+		B27DBF9921334590003EDC72 /* PurchaseHistoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryDetailsViewController.swift; sourceTree = "<group>"; };
 		B28268971F4A2C1700F2C33B /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
 		B28268981F4A2C1700F2C33B /* CartItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartItemTableViewCell.xib; sourceTree = "<group>"; };
 		B29BEEA91F48C48E00B0A207 /* PersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
@@ -326,6 +346,9 @@
 				B29BEEBB1F49953800B0A207 /* Login.swift */,
 				B29BEEBD1F49E33000B0A207 /* User.swift */,
 				B27DBF7A212DE1B7003EDC72 /* UserData.swift */,
+				B27DBF8D2133317E003EDC72 /* Purchase.swift */,
+				B27DBF8F21333219003EDC72 /* PurchaseProduct.swift */,
+				B27DBF97213343C1003EDC72 /* PurchaseStatus.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -502,6 +525,11 @@
 			isa = PBXGroup;
 			children = (
 				B232453E1F4AE7D900211042 /* PurchaseViewController.swift */,
+				B27DBF8221331D65003EDC72 /* PurchaseConfirmViewController.swift */,
+				B27DBF862133250F003EDC72 /* PurchaseConfirmProductTableViewCell.swift */,
+				B27DBF9121333C75003EDC72 /* PurchaseHistoryViewController.swift */,
+				B27DBF9321333D4B003EDC72 /* PurchaseHistoryTableViewCell.swift */,
+				B27DBF9921334590003EDC72 /* PurchaseHistoryDetailsViewController.swift */,
 			);
 			name = Purchase;
 			sourceTree = "<group>";
@@ -510,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				B23245411F4AE81B00211042 /* Purchase.storyboard */,
+				B27DBF8A21332513003EDC72 /* Cells */,
 			);
 			name = Purchase;
 			sourceTree = "<group>";
@@ -527,6 +556,15 @@
 			children = (
 			);
 			name = Stripe;
+			sourceTree = "<group>";
+		};
+		B27DBF8A21332513003EDC72 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B27DBF872133250F003EDC72 /* PurchaseConfirmProductTableViewCell.xib */,
+				B27DBF9421333D4B003EDC72 /* PurchaseHistoryTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		B28268961F4A2BFD00F2C33B /* Cells */ = {
@@ -644,11 +682,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B211E8061F42143C006B4A88 /* Products.storyboard in Resources */,
+				B27DBF892133250F003EDC72 /* PurchaseConfirmProductTableViewCell.xib in Resources */,
 				B211E8351F470792006B4A88 /* ProductDetailsHeaderTableViewCell.xib in Resources */,
 				B211E8181F423B5E006B4A88 /* ProductDetailsTitleTableViewCell.xib in Resources */,
 				B204AC6F1F32602700DC9767 /* LaunchScreen.storyboard in Resources */,
 				B204AC6C1F32602700DC9767 /* Assets.xcassets in Resources */,
 				B211E8201F423B86006B4A88 /* ProductDetailsFiltersTableViewCell.xib in Resources */,
+				B27DBF9621333D4B003EDC72 /* PurchaseHistoryTableViewCell.xib in Resources */,
 				B211E85C1F48AFB2006B4A88 /* Cart.storyboard in Resources */,
 				B211E7FA1F418019006B4A88 /* ProductCollectionViewCell.xib in Resources */,
 				B211E8141F423B18006B4A88 /* ProductDetailsImagesTableViewCell.xib in Resources */,
@@ -748,10 +788,14 @@
 				B211E80D1F423A24006B4A88 /* ProductDetailsViewController.swift in Sources */,
 				B204AC7D1F326A4C00DC9767 /* HomeViewController.swift in Sources */,
 				B211E81F1F423B86006B4A88 /* ProductDetailsFiltersTableViewCell.swift in Sources */,
+				B27DBF8321331D65003EDC72 /* PurchaseConfirmViewController.swift in Sources */,
 				B27DBF7B212DE1B8003EDC72 /* UserData.swift in Sources */,
 				B204AC811F3270A400DC9767 /* CategoriesViewController.swift in Sources */,
+				B27DBF9A21334590003EDC72 /* PurchaseHistoryDetailsViewController.swift in Sources */,
+				B27DBF98213343C1003EDC72 /* PurchaseStatus.swift in Sources */,
 				B211E84F1F47902C006B4A88 /* MoreViewController.swift in Sources */,
 				B29BEEB71F49767C00B0A207 /* MoreMenuViewController.swift in Sources */,
+				B27DBF882133250F003EDC72 /* PurchaseConfirmProductTableViewCell.swift in Sources */,
 				B29BEEBC1F49953800B0A207 /* Login.swift in Sources */,
 				B211E82F1F4309FA006B4A88 /* ImagesItemViewController.swift in Sources */,
 				B211E8041F41FD08006B4A88 /* Product.swift in Sources */,
@@ -767,7 +811,11 @@
 				B211E82A1F4240FA006B4A88 /* ProductFilterValue.swift in Sources */,
 				B29BEEAF1F48C73200B0A207 /* RegisterViewController.swift in Sources */,
 				B211E8131F423B18006B4A88 /* ProductDetailsImagesTableViewCell.swift in Sources */,
+				B27DBF9521333D4B003EDC72 /* PurchaseHistoryTableViewCell.swift in Sources */,
 				B29BEEAD1F48C72000B0A207 /* LoginViewController.swift in Sources */,
+				B27DBF9221333C75003EDC72 /* PurchaseHistoryViewController.swift in Sources */,
+				B27DBF9021333219003EDC72 /* PurchaseProduct.swift in Sources */,
+				B27DBF8E2133317E003EDC72 /* Purchase.swift in Sources */,
 				B204AC951F406D3B00DC9767 /* ApiService.swift in Sources */,
 				B211E7F61F417E8B006B4A88 /* ProductsViewController.swift in Sources */,
 				B211E8511F47A186006B4A88 /* ApplicationExtensions.swift in Sources */,

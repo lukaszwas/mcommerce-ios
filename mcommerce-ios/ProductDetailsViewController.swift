@@ -58,6 +58,7 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
     // Add to cart
     func addToCart() {
         let cartItem: NSDictionary = [
+            "productId" : (self.product?.id)!,
             "name" : (self.product?.name)!,
             "price" : (self.product?.price)!,
             "quantity" : 1,

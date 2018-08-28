@@ -71,6 +71,13 @@ class CustomizationManager {
     static let productsDetails_rateStar_inactiveBackgroundColor = rgb(red: 240, green: 242, blue: 244)
     static let productsDetails_noImageColor = rgb(red: 85, green: 119, blue: 147)
     
+    // PURCHASE
+    
+    // Order details
+    static let purchase_icon_imageColor = rgb(red: 85, green: 119, blue: 147)
+    static let purchase_titleTextColor = rgb(red: 85, green: 119, blue: 147)
+    static let purchase_buttonBackgroundColor = rgb(red: 85, green: 119, blue: 147)
+    
     // AUTH
     
     // Login
