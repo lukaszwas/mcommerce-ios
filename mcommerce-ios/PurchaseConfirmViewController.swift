@@ -9,7 +9,7 @@
 import UIKit
 
 class PurchaseConfirmViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     var firstName: String?
     var lastName: String?
     var address1: String?
@@ -63,7 +63,7 @@ class PurchaseConfirmViewController: UIViewController, UITableViewDataSource, UI
         self.addressTitleLabel.textColor = CustomizationManager.purchase_titleTextColor
         
         self.payButton.setTitle(NSLocalizedString("purchase_confirm_pay", comment: ""), for: UIControlState.normal)
-        
+        self.payButton.backgroundColor = CustomizationManager.purchase_buttonBackgroundColor
     }
     
     // Fill sum label
@@ -155,10 +155,14 @@ class PurchaseConfirmViewController: UIViewController, UITableViewDataSource, UI
                 
                 ApiManager.instance.reqest(.purchaseAddProduct(purchaseId: (result?.id)!, productId: productId, price: price), completion: { (result: PurchaseProduct?) in
                 }) { }
-                
-                PersistanceManager.clearCart()
-                self.navigationController?.popToRootViewController(animated: true)
             }
+            
+            PersistanceManager.clearCart()
+            
+            // go to payment page
+            let vc: PaymentViewController = PaymentViewController()
+            vc.purchaseId = (result?.id)!
+            self.navigationController?.pushViewController(vc, animated: true)
         }) { }
     }
 }

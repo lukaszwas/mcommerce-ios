@@ -76,4 +76,27 @@ class ApiManager {
         }
     }
     
+    // request for string
+    func reqest(_ request: ApiService, completion: @escaping (_ response: String?) -> Void, errorCopletion: @escaping () -> Void) {
+        let api = MoyaProvider<ApiService>()
+        
+        api.request(request) { result in
+            switch result {
+            case let .success(response):
+                NSLog(String(data: response.data, encoding: .utf8)!)
+                
+                if (response.statusCode != 200) {
+                    errorCopletion()
+                }
+                
+                completion (String(data: response.data, encoding: .utf8)!)
+                
+            case let .failure(error):
+                NSLog(error.errorDescription!)
+                
+                errorCopletion()
+            }
+        }
+    }
+    
 }

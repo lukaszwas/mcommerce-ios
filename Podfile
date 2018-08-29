@@ -8,4 +8,5 @@ target 'mcommerce-ios' do
   pod 'ModelMapper'
   pod 'AlamofireImage', '~> 3.2'
   pod 'Stripe'
+  pod 'FormTextField'
 end

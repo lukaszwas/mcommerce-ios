@@ -72,6 +72,12 @@
 		B27DBF9621333D4B003EDC72 /* PurchaseHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27DBF9421333D4B003EDC72 /* PurchaseHistoryTableViewCell.xib */; };
 		B27DBF98213343C1003EDC72 /* PurchaseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF97213343C1003EDC72 /* PurchaseStatus.swift */; };
 		B27DBF9A21334590003EDC72 /* PurchaseHistoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DBF9921334590003EDC72 /* PurchaseHistoryDetailsViewController.swift */; };
+		B27DC0192136B253003EDC72 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DC0182136B253003EDC72 /* PaymentViewController.swift */; };
+		B27DC01B2136B28B003EDC72 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DC01A2136B28B003EDC72 /* Field.swift */; };
+		B27DC01D2136B33A003EDC72 /* FormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DC01C2136B33A003EDC72 /* FormTextFieldCell.swift */; };
+		B27DC01F2136B362003EDC72 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DC01E2136B362003EDC72 /* HeaderCell.swift */; };
+		B27DC0222136F53B003EDC72 /* PaymentButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DC0202136F53B003EDC72 /* PaymentButtonTableViewCell.swift */; };
+		B27DC0232136F53B003EDC72 /* PaymentButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27DC0212136F53B003EDC72 /* PaymentButtonTableViewCell.xib */; };
 		B28268991F4A2C1700F2C33B /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28268971F4A2C1700F2C33B /* CartItemTableViewCell.swift */; };
 		B282689A1F4A2C1700F2C33B /* CartItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28268981F4A2C1700F2C33B /* CartItemTableViewCell.xib */; };
 		B29BEEAA1F48C48E00B0A207 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29BEEA91F48C48E00B0A207 /* PersistanceManager.swift */; };
@@ -155,6 +161,12 @@
 		B27DBF9421333D4B003EDC72 /* PurchaseHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		B27DBF97213343C1003EDC72 /* PurchaseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseStatus.swift; sourceTree = "<group>"; };
 		B27DBF9921334590003EDC72 /* PurchaseHistoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryDetailsViewController.swift; sourceTree = "<group>"; };
+		B27DC0182136B253003EDC72 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		B27DC01A2136B28B003EDC72 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		B27DC01C2136B33A003EDC72 /* FormTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldCell.swift; sourceTree = "<group>"; };
+		B27DC01E2136B362003EDC72 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		B27DC0202136F53B003EDC72 /* PaymentButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButtonTableViewCell.swift; sourceTree = "<group>"; };
+		B27DC0212136F53B003EDC72 /* PaymentButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentButtonTableViewCell.xib; sourceTree = "<group>"; };
 		B28268971F4A2C1700F2C33B /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
 		B28268981F4A2C1700F2C33B /* CartItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartItemTableViewCell.xib; sourceTree = "<group>"; };
 		B29BEEA91F48C48E00B0A207 /* PersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
@@ -260,6 +272,7 @@
 				B29BEEB31F49764D00B0A207 /* More */,
 				B29BEEAB1F48C6EF00B0A207 /* Auth */,
 				B232453D1F4AE6F400211042 /* Purchase */,
+				B27DC0172136B23E003EDC72 /* Payment */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -272,7 +285,6 @@
 				B211E7ED1F40A313006B4A88 /* Models */,
 				B204AC911F406B6700DC9767 /* Networking */,
 				B29BEEA81F48C45A00B0A207 /* Persistance */,
-				B2436B441F58192100F58F2F /* Payments */,
 				B204AC641F32602700DC9767 /* AppDelegate.swift */,
 			);
 			name = App;
@@ -543,28 +555,26 @@
 			name = Purchase;
 			sourceTree = "<group>";
 		};
-		B2436B441F58192100F58F2F /* Payments */ = {
-			isa = PBXGroup;
-			children = (
-				B2436B451F58193100F58F2F /* Stripe */,
-			);
-			name = Payments;
-			sourceTree = "<group>";
-		};
-		B2436B451F58193100F58F2F /* Stripe */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Stripe;
-			sourceTree = "<group>";
-		};
 		B27DBF8A21332513003EDC72 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B27DC0212136F53B003EDC72 /* PaymentButtonTableViewCell.xib */,
 				B27DBF872133250F003EDC72 /* PurchaseConfirmProductTableViewCell.xib */,
 				B27DBF9421333D4B003EDC72 /* PurchaseHistoryTableViewCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		B27DC0172136B23E003EDC72 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				B27DC0182136B253003EDC72 /* PaymentViewController.swift */,
+				B27DC01A2136B28B003EDC72 /* Field.swift */,
+				B27DC01C2136B33A003EDC72 /* FormTextFieldCell.swift */,
+				B27DC01E2136B362003EDC72 /* HeaderCell.swift */,
+				B27DC0202136F53B003EDC72 /* PaymentButtonTableViewCell.swift */,
+			);
+			name = Payment;
 			sourceTree = "<group>";
 		};
 		B28268961F4A2BFD00F2C33B /* Cells */ = {
@@ -695,6 +705,7 @@
 				B23245421F4AE81B00211042 /* Purchase.storyboard in Resources */,
 				B29BEEBA1F49779B00B0A207 /* More.storyboard in Resources */,
 				B204AC6A1F32602700DC9767 /* Home.storyboard in Resources */,
+				B27DC0232136F53B003EDC72 /* PaymentButtonTableViewCell.xib in Resources */,
 				B204AC861F38F9B400DC9767 /* CategoryTableViewCell.xib in Resources */,
 				B282689A1F4A2C1700F2C33B /* CartItemTableViewCell.xib in Resources */,
 				B211E8241F423B96006B4A88 /* ProductDetailsRatesTableViewCell.xib in Resources */,
@@ -717,6 +728,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-mcommerce-ios/Pods-mcommerce-ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/FormTextField/FormTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -726,6 +738,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FormTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -785,6 +798,7 @@
 				B211E8381F4742B9006B4A88 /* StringSizeExtension.swift in Sources */,
 				B204AC651F32602700DC9767 /* AppDelegate.swift in Sources */,
 				B211E7F91F418019006B4A88 /* ProductCollectionViewCell.swift in Sources */,
+				B27DC0222136F53B003EDC72 /* PaymentButtonTableViewCell.swift in Sources */,
 				B211E80D1F423A24006B4A88 /* ProductDetailsViewController.swift in Sources */,
 				B204AC7D1F326A4C00DC9767 /* HomeViewController.swift in Sources */,
 				B211E81F1F423B86006B4A88 /* ProductDetailsFiltersTableViewCell.swift in Sources */,
@@ -793,6 +807,7 @@
 				B204AC811F3270A400DC9767 /* CategoriesViewController.swift in Sources */,
 				B27DBF9A21334590003EDC72 /* PurchaseHistoryDetailsViewController.swift in Sources */,
 				B27DBF98213343C1003EDC72 /* PurchaseStatus.swift in Sources */,
+				B27DC0192136B253003EDC72 /* PaymentViewController.swift in Sources */,
 				B211E84F1F47902C006B4A88 /* MoreViewController.swift in Sources */,
 				B29BEEB71F49767C00B0A207 /* MoreMenuViewController.swift in Sources */,
 				B27DBF882133250F003EDC72 /* PurchaseConfirmProductTableViewCell.swift in Sources */,
@@ -801,6 +816,8 @@
 				B211E8041F41FD08006B4A88 /* Product.swift in Sources */,
 				B211E8611F48B2A9006B4A88 /* CartEmptyViewController.swift in Sources */,
 				B211E8591F4878A9006B4A88 /* RecommendedHeaderCollectionReusableView.swift in Sources */,
+				B27DC01F2136B362003EDC72 /* HeaderCell.swift in Sources */,
+				B27DC01B2136B28B003EDC72 /* Field.swift in Sources */,
 				B29BEEBE1F49E33000B0A207 /* User.swift in Sources */,
 				B211E8341F470792006B4A88 /* ProductDetailsHeaderTableViewCell.swift in Sources */,
 				B27DBF79212DD808003EDC72 /* MoreUserDataViewController.swift in Sources */,
@@ -829,6 +846,7 @@
 				B211E8171F423B5E006B4A88 /* ProductDetailsTitleTableViewCell.swift in Sources */,
 				B211E8571F48731B006B4A88 /* Recommended.swift in Sources */,
 				B211E8231F423B96006B4A88 /* ProductDetailsRatesTableViewCell.swift in Sources */,
+				B27DC01D2136B33A003EDC72 /* FormTextFieldCell.swift in Sources */,
 				B211E8261F423F59006B4A88 /* ProductImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

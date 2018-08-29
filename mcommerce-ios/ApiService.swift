@@ -35,6 +35,7 @@ enum ApiService {
     case purchaseAddProduct(purchaseId: Int, productId: Int, price: Float)
     case getAllUserPurchases()
     case getPurchaseProducts(purchaseId: Int)
+    case pay(purchaseId: Int, cardNumber: String, cardExpirationMonth: String, cardExpirationYear: String, cardCvc: String)
 }
 
 extension ApiService: TargetType {
@@ -73,13 +74,15 @@ extension ApiService: TargetType {
                 return "/purchase"
             case .getPurchaseProducts(let id):
                 return "/purchase/\(id)"
+            case .pay(let id, let _, let _, let _, let _):
+                return "/purchase/pay/\(id)"
         }
     }
     var method: Moya.Method {
         switch self {
         case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .searchProducts, .getUserWithId, .getAllUserPurchases, .getPurchaseProducts:
                 return .get
-            case .login, .logout, .register, .purchase, .purchaseAddProduct:
+            case .login, .logout, .register, .purchase, .purchaseAddProduct, .pay:
                 return .post
             case .saveUser:
                 return .patch
@@ -99,13 +102,15 @@ extension ApiService: TargetType {
                 return ["user_id": userId, "statusId": statusId, "first_name": firstName, "last_name": lastName, "address1": address1, "address2": address2, "zip_code": zipCode, "city": city]
             case .purchaseAddProduct(let purchaseId, let productId, let price):
                 return ["purchase_id": purchaseId, "product_id": productId, "price": price]
+            case .pay(let purchaseId, let cardNumber, let cardExpirationMonth, let cardExpirationYear, let cardCvc):
+                return ["purchase_id": purchaseId, "card_number": cardNumber, "card_expiration_month": cardExpirationMonth, "card_expiration_year": cardExpirationYear, "card_cvc": cardCvc]
         }
     }
     var parameterEncoding: ParameterEncoding {
         switch self {
         case .getAllCategories, .getRootCategories, .getSubategories, .getProductsWithCategoryId, .getProductsWithId, .getRecommendedProducts, .searchProducts, .getUserWithId, .getAllUserPurchases, .getPurchaseProducts:
                 return URLEncoding.default
-            case .login, .logout, .saveUser, .register, .purchase, .purchaseAddProduct:
+            case .login, .logout, .saveUser, .register, .purchase, .purchaseAddProduct, .pay:
                 return JSONEncoding.default
         }
     }

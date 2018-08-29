@@ -103,6 +103,18 @@
 // Purchase history
 "purchase_history_title" = "Historia zamówień";
 
+// Payment
+"payment_card_title" = "Informacje o karcie";
+"payment_card_number" = "Numer";
+"payment_card_expire" = "Ważność";
+"payment_card_cvc" = "CVC";
+"payment_card_placeholder_number" = "Numer karty";
+"payment_card_placeholder_expire" = "MM/YY";
+"payment_card_placeholder_cvc" = "Kod zabezpieczający";
+"payment_success" = "Zamówienie i płatność powiodły się";
+"payment_failure" = "Błąd podczas płatności";
+"payment_wrong_fields" = "Pola zostały niepoprawnie wypełnione";
+
 // MORE ------------
 
 // User data
